@@ -49,10 +49,10 @@ export default function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <div className="absolute top-6 left-0 right-0 flex items-center justify-start md:gap-60 w-screen md:mx-auto md:w-[1000px] z-50">
-<div className="absolute -left-20 top-1/2 -translate-y-1/2 -z-10">
-  <div className="w-44 h-44 bg-[radial-gradient(circle,rgba(238,51,36,0.55),rgba(238,51,36,0.15),transparent_70%)] blur-2xl rounded-full"></div>
-</div>
+      <div className="absolute top-6 left-0 right-0 flex items-center justify-start md:gap-60 lg:gap-36 xl:gap-60 w-screen md:mx-auto md:w-[1000px] lg:w-[800px] xl:w-[1000px] z-50">
+      <div className="absolute -left-20 top-1/2 -translate-y-1/2 -z-10">
+        <div className="w-44 h-44 bg-[radial-gradient(circle,rgba(238,51,36,0.55),rgba(238,51,36,0.15),transparent_70%)] blur-2xl rounded-full"></div>
+      </div>
 
 
         <Image
