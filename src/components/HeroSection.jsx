@@ -53,7 +53,7 @@ export default function HeroSection() {
 
       <div className="mt-2 md:mt-10 z-10 mb-44 sm:mb-0">
           <Image
-            src="/sub.png"
+            src="/sub2.png"
             alt="home-img"
             width={500}
             height={500}

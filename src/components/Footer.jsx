@@ -13,7 +13,7 @@ const Footer = () => {
             short-term fitness <span className="text-white">to</span> lifelong wellness.
           </span>
         </h2>
-        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-20 lg:h-20 xl:w-28 xl:h-28 bg-[#EE3324] rounded-full flex items-center justify-center">
+        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-22 lg:h-22 xl:w-28 xl:h-28 bg-[#EE3324] rounded-full flex items-center justify-center">
           <div className="w-15 h-15 md:w-21 md:h-21 lg:w-16 lg:h-16 xl:w-21 xl:h-21 bg-transparent rounded-full flex items-center justify-center ring-2 ring-white">     
             <div className="w-10 h-10 rounded-full md:w-15 md:h-15 lg:w-8 lg:h-8 xl:w-15 xl:h-15 bg-white flex items-center justify-center">
                 <Image src="/footer-logo.png" alt="footer-logo" width={500} height={500} className="w-5 md:w-10 lg:w-5 xl:w-10"/>
