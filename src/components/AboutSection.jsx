@@ -1,5 +1,48 @@
+"use client"
 import Image from "next/image";
 import React from "react";
+import { useEffect, useRef, useState } from "react";
+
+function CountUp({ end }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !started.current) {
+          started.current = true;
+          let start = 0;
+          const duration = 1500;
+          const increment = end / (duration / 16);
+
+          const animate = () => {
+            start += increment;
+            if (start < end) {
+              setCount(Math.floor(start));
+              requestAnimationFrame(animate);
+            } else {
+              setCount(end);
+            }
+          };
+
+          animate();
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end]);
+
+  return (
+    <span ref={ref}>
+      {count.toLocaleString()}
+    </span>
+  );
+}
 
 const AboutSection = () => {
   return (
@@ -26,7 +69,7 @@ const AboutSection = () => {
 
           <p className="text-[#FFFFFF] text-base w-20 md:w-auto md:text-xl font-semibold">
             Trusted by Over <br />
-            1,000 Members
+            <CountUp end={1000} /> Members
           </p>
           <div className="flex items-center md:mt-6">
             <Image

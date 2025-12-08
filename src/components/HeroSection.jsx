@@ -3,8 +3,9 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <div
+      id="home"
       className="
-      relative w-full h-[120vh] md:h-screen flex flex-col md:flex-row  items-center justify-between md:pr-48 lg:pr-28 2xl:pr-52
+      relative w-full h-[135vh] md:h-screen flex flex-col md:flex-row  items-center justify-between md:pr-48 lg:pr-28 2xl:pr-52
       bg-[#050504] overflow-hidden
       "
     >
@@ -34,7 +35,7 @@ export default function HeroSection() {
         </p>
 
         <div className="flex items-center mt-[4vh] mb-[2vh] lg:mt-6 xl:mt-8">
-          <button className="px-8 py-3 rounded-full text-white text-sm font-bold bg-[#717171]">
+          <button className="px-8 py-3 rounded-full text-white text-sm font-bold bg-[#f5594efc]">
             Explore the Platform
           </button>
 
@@ -50,7 +51,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="mt-2 md:mt-10 z-10">
+      <div className="mt-2 md:mt-10 z-10 mb-44 sm:mb-0">
           <Image
             src="/sub.png"
             alt="home-img"
