@@ -5,7 +5,7 @@ import {BadgeCheck} from "lucide-react"
 const TargetAud = () => {
   return (
     <section className="w-full bg-black text-white py-20">
-      <div className="max-w-[1300px] mx-auto px-4 xl:px-24 2xl:px-6  grid md:grid-cols-2 gap-12 xl:gap-8 2xl:gap-12 items-start justify-between">
+      <div className="max-w-[1300px] mx-auto px-4 xl:px-24 lg:px-8 2xl:px-6  grid md:grid-cols-2 gap-12 xl:gap-8 2xl:gap-12 items-start justify-between">
 
         {/* LEFT SIDE CONTENT */}
         <div className="w-[90vw] md:w-auto">
@@ -13,25 +13,25 @@ const TargetAud = () => {
             Who This Is For
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-4">
             <span className="text-white">For Everybody who Wants</span><br />
             & to<span className="text-[#EE3324]"> live Healthy</span>
           </h2>
 
-          <p className="text-gray-300 w-[80vw] md:max-w-md mb-15">
+          <p className="text-gray-300 w-[80vw] md:max-w-md mb-15 lg:mb-10 xl:mb-15">
             People seeking long-term health, not quick fixes. <br />
             Communities investing in wellness infrastructure.
           </p>
 
           <div className="grid grid-cols-2 gap-y-4 gap-x-4 md:w-[500px]">
-            <div className="text-[#EE3324] font-semibold text-sm md:text-lg px-4 py-3 text-center bg-[#131313] rounded-xl">Professionals</div>
-            <div className="text-[#EE3324] font-semibold text-sm md:text-lg px-4 py-3 text-center bg-[#131313] rounded-xl">Entrepreneurs</div>
-            <div className="text-[#EE3324] col-span-2 font-semibold text-sm md:text-lg px-4 py-3 text-center bg-[#131313] rounded-xl">High Performance Individuals</div>
+            <div className="text-[#EE3324] font-semibold text-sm md:text-lg lg:text-base xl:text-lg px-4 py-3 text-center bg-[#131313] rounded-xl">Professionals</div>
+            <div className="text-[#EE3324] font-semibold text-sm md:text-lg lg:text-base xl:text-lg px-4 py-3 text-center bg-[#131313] rounded-xl">Entrepreneurs</div>
+            <div className="text-[#EE3324] col-span-2 font-semibold text-sm md:text-lg lg:text-base xl:text-lg px-4 py-3 text-center bg-[#131313] rounded-xl">High Performance Individuals</div>
           </div>
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="relative w-[85vw] md:w-[35vw] xl:w-[38vw] 2xl:w-[35vw]">
+        <div className="relative w-[85vw] md:w-[35vw] lg:w-[38vw] xl:w-[38vw] 2xl:w-[35vw]">
           <Image
             src="/people-pickleball.png"
             width={2000}

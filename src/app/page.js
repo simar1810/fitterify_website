@@ -13,7 +13,7 @@ export default function Home() {
     <div className="">
      <Navbar />
       <HeroSection />
-      <FloatingSection />
+      {/* <FloatingSection /> */}
       <AboutSection />
       <WeDo />
       <TargetAud />

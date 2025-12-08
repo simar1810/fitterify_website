@@ -3,14 +3,14 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <div id="about" className="w-full bg-[#050505] py-24 px-6 flex justify-center">
+    <div id="about" className="w-full bg-[#050505] py-24 px-6 xl:px-20 2xl:px-6 flex justify-center">
       <div className="max-w-[1300px] w-full grid grid-cols-1 md:grid-cols-3 gap-20 items-center">
         <div>
           <p className="text-xs font-semibold text-[#EE3324] bg-[#1a1a1a] w-fit px-3 py-3 rounded-full">
             About Fitterily
           </p>
 
-          <h2 className="text-4xl font-bold text-white leading-snug">
+          <h2 className="text-4xl lg:text-3xl xl:text-4xl font-bold text-white leading-snug">
             Discover a Company <br />
             That Trains You <br />
             to Be{" "}
@@ -56,7 +56,7 @@ const AboutSection = () => {
           </div>
         </div>
         <div className="text-[#EDEDED] text-[15px] leading-3 md:pr-8 ">
-          <p className="font-literata text-lg leading-6">
+          <p className="font-literata text-lg lg:text-base xl:text-lg leading-6">
             At Fitterify, our community isn’t just showing up — they’re leveling up. From newcomers to elite athletes, every member pushes harder, lifts stronger, and supports one another through every rep.
           </p>
 
