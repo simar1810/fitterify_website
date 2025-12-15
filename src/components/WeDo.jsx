@@ -45,7 +45,7 @@ export default function WeDo() {
           <div className="flex-col items-center justify-center gap-4">
             <Image src="/wellness_app.png" alt="longevity" width={100} height={100} className="w-24 mb-2 rounded-2xl mx-auto" />
             <div className="flex items-center justify-center gap-2">
-              <Image src="/appstore.png" alt="appstore" width={100} height={40} className="w-18 md:w-20"/>
+              <Image src="/appStore.png" alt="appstore" width={100} height={40} className="w-18 md:w-20"/>
               <Image src="/playstore.png" alt="playstore" width={100} height={40} className="w-18 md:w-20"/>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function WeDo() {
           <div className="flex-col items-center justify-center gap-4">
             <Image src="/longevity.png" alt="longevity" width={100} height={100} className="w-24 mb-2 rounded-2xl mx-auto" />
             <div className="flex items-center justify-center gap-2">
-              <Image src="/appstore.png" alt="appstore" width={100} height={40} className="w-18 md:w-20"/>
+              <Image src="/appStore.png" alt="appstore" width={100} height={40} className="w-18 md:w-20"/>
               <Image src="/playstore.png" alt="playstore" width={100} height={40} className="w-18 md:w-20"/>
             </div>
           </div>
