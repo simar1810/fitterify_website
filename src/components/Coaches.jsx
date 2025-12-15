@@ -44,6 +44,7 @@ const Coaches = () => {
     return () => clearInterval(interval);
   }, [trainers.length]);
   return (
+    <div className="md:sticky md:top-32 md:z-60 md:-mt-24 bg-[#1a1a19] transition-transform duration-500 backdrop-blur-sm">
     <section id="trainer" className="w-full bg-[#1a1a19] py-24 px-6 text-white">
       <div className="max-w-7xl mx-auto text-center">
 
@@ -145,7 +146,8 @@ const Coaches = () => {
           </button>
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
