@@ -50,7 +50,7 @@ const AboutSection = () => {
       <div className="max-w-[1300px] w-full grid grid-cols-1 md:grid-cols-3 gap-20 items-center">
         <div>
           <p className="text-xs font-semibold text-[#EE3324] bg-[#1a1a1a] w-fit px-3 py-3 rounded-full">
-            About Fitterily
+            About Fitterify
           </p>
 
           <h2 className="text-4xl lg:text-3xl xl:text-4xl font-bold text-white leading-snug">
@@ -62,8 +62,8 @@ const AboutSection = () => {
             <span className="text-[#EE3324]">Focused</span>
           </h2>
         </div>
-        <div className="bg-[#717171] w-full md:w-80 px-4  py-5 text-center flex flex-row md:flex-col justify-between items-center shadow-[0_0_40px_rgba(0,0,0,0.3)]">
-          <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center mb-4">
+        <div className=" w-full md:w-80 px-4  py-5 text-center flex flex-row md:flex-col justify-between items-center">
+          <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-[#EE3324] flex items-center justify-center mb-4">
             <Image src="/barbell.png" alt="icon" width={24} height={24} />
           </div>
 
@@ -93,7 +93,7 @@ const AboutSection = () => {
               height={40}
               className="rounded-full border-2 border-white -ml-3"
             />
-            <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center -ml-3 text-sm font-semibold">
+            <div className="w-10 h-10 rounded-full bg-[#EE3324] text-white flex items-center justify-center -ml-3 text-sm font-semibold">
               +1K
             </div>
           </div>

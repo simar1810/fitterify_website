@@ -19,22 +19,21 @@ const Coaches = () => {
 
   const trainers = [
   {
-    name: "Liam Carter",
+    name: "Afnaz",
     role: "HIIT & Fat Loss Expert",
     img: "/trainer1.png",
   },
   {
-    name: "Ava Mitchell",
+    name: "Sourav",
     role: "Strength & Conditioning Coach",
     img: "/trainer2.png",
   },
   {
-    name: "Smith Hernandez",
+    name: "Joel",
     role: "Weight Loss & Toning Expert",
     img: "/trainer3.png",
   },
 ];
-  // ★ Auto-scroll effect
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) =>
@@ -45,7 +44,7 @@ const Coaches = () => {
     return () => clearInterval(interval);
   }, [trainers.length]);
   return (
-    <section className="w-full bg-[#1a1a19] py-24 px-6 text-white">
+    <section id="trainer" className="w-full bg-[#1a1a19] py-24 px-6 text-white">
       <div className="max-w-7xl mx-auto text-center">
 
         <span className="inline-block bg-[#EE3324] font-semibold text-sm px-5 py-2 rounded-full mb-6">

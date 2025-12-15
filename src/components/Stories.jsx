@@ -35,7 +35,7 @@ const Stories = () => {
         {/* RIGHT CONTENT */}
         <div className="max-w-lg text-white pt-4 md:pt-14">
           <p className="text-lg w-full text-[#FFFFFFC2] md:w-sm leading-relaxed mb-8">
-Before joining Fitvive, I struggled with staying consistent. The structured programs and trainer support helped me stay focused and drop 6kg while building real strength.
+Before joining Fitterify, I struggled with staying consistent. The structured programs and trainer support helped me stay focused and drop 6kg while building real strength.
           </p>
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-white overflow-hidden">
@@ -47,7 +47,7 @@ Before joining Fitvive, I struggled with staying consistent. The structured prog
               />
             </div>
             <div>
-              <p className="font-semibold">Jake Wilson</p>
+              <p className="font-semibold">Raghav Arora</p>
               <div className="flex items-center gap-1 text-sm">
                 <Star size={15} fill="white"/>
                 <Star size={15} fill="white"/>

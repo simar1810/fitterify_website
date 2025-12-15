@@ -39,9 +39,20 @@ export default function WeDo() {
             </h2>
           </div>
         </div>
-        <p className="text-white mt-6 md:mt-12 max-w-sm font-literata leading-relaxed">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:items-center mt-4 md:mt-0">
+          <div className="flex-col items-center justify-center gap-4">
+            <Image src="/wellness_app.png" alt="longevity" width={100} height={100} className="w-24 mb-2 rounded-2xl mx-auto" />
+            <div className="flex items-center justify-center gap-2">
+              <Image src="/appstore.png" alt="appstore" width={100} height={40} className="w-18 md:w-20"/>
+              <Image src="/playstore.png" alt="playstore" width={100} height={40} className="w-18 md:w-20"/>
+            </div>
+          </div>
+          
+         <p className="text-white mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">
               Data-driven insights for daily health, recovery, and performance.
         </p>
+        </div>
+
         <button className="w-12 h-12 mt-6 md:mt-0 rounded-full border border-gray-600 flex items-center justify-center">
           <ArrowRight size={20} />
         </button>
@@ -63,9 +74,18 @@ export default function WeDo() {
             </h2>
           </div>
         </div>
-        <p className="text-white mt-6 md:mt-12 max-w-sm font-literata leading-relaxed">
-              Programs designed for long-term vitality, not short-term results.
+        <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:items-center mt-4 md:mt-0">
+          <div className="flex-col items-center justify-center gap-4">
+            <Image src="/longevity.png" alt="longevity" width={100} height={100} className="w-24 mb-2 rounded-2xl mx-auto" />
+            <div className="flex items-center justify-center gap-2">
+              <Image src="/appstore.png" alt="appstore" width={100} height={40} className="w-18 md:w-20"/>
+              <Image src="/playstore.png" alt="playstore" width={100} height={40} className="w-18 md:w-20"/>
+            </div>
+          </div>
+         <p className="text-white mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">
+             Programs designed for long-term vitality, not short-term results.
         </p>
+        </div>
         <div className="relative md:space-x-4">
           <Image
             src="/Image-Hover2.png"
