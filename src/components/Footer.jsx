@@ -1,7 +1,16 @@
+"use client"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Footer = () => {
+  const router = useRouter();
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <footer id="contact" className="w-full bg-black text-white px-6 md:px-20 py-16">
       
@@ -24,8 +33,8 @@ const Footer = () => {
       <div className="border-t border-white/10 my-14" />
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
-          <h4 className="font-semibold mb-8">Logo</h4>
-          <p className="text-white text-lg leading-relaxed">
+          <Image onClick={() => scrollToSection("home")} src="/logo.png" alt="footer-logo" width={500} height={500} className="w-15 lg:w-12 xl:w-14 "/>
+          <p className="text-white text-lg leading-relaxed mt-6">
             Train with Purpose. <br />
             Transform with Power.
           </p>
@@ -50,31 +59,31 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-8">🔗 Quick Links</h4>
           <ul className="text-white text-lg space-y-2 flex flex-wrap gap-x-8 items-center justify-start">
-            <li>Home</li>
-            <li>About</li>
-            <li>Programs</li>
-            <li>Trainers</li>
-            <li>Success Stories</li>
-            <li>Pricing</li>
+            <li onClick={() => scrollToSection("home")} className="cursor-pointer">Home</li>
+            <li onClick={() => scrollToSection("about")} className="cursor-pointer">About</li>
+            <li className="cursor-pointer" onClick={()=>router.push("/programs")}>Programs</li>
+            <li onClick={() => scrollToSection("trainer")} className="cursor-pointer">Trainers</li>
+            <li className="cursor-pointer" onClick={()=>router.push("/success-stories")}>Success Stories</li>
+            <li className="cursor-not-allowed">Pricing</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10 mt-12 pt-6" />
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm text-white">
-        <p>© 2025 Fitterify. All rights reserved.</p>
+        <p>© 2025 Fitterify. All rights reserved. <br /><span>powered by WellnessZ</span></p>
         <div className="flex flex-wrap gap-4">
-          <button className="px-4 py-2 border border-white/20 rounded-full flex items-center gap-2">
+          <button onClick={()=>router.push("https://www.facebook.com/profile.php?id=100083752502766&mibextid=wwXIfr&mibextid=wwXIfr")} className="px-4 cursor-pointer py-2 border border-white/20 rounded-full flex items-center gap-2">
             <Image src="/facebook.png" alt="facebook" width={50} height={50} className="w-4"/>        
             Facebook
           </button>
-          <button className="px-4 py-2 border border-white/20 rounded-full flex items-center gap-2">
+          <button onClick={()=>router.push("https://www.instagram.com/fitterify?igsh=ZjV5bndodWxidGRp")} className="px-4 py-2 border border-white/20 rounded-full flex items-center gap-2 cursor-pointer">
             <Image src="/instagram.png" alt="instagram" width={50} height={50} className="w-4"/>
             Instagram
           </button>
-          <button className="px-4 py-2 border border-white/20 rounded-full flex items-center gap-2">
+          {/* <button className="px-4 cursor-not-allowed py-2 border border-white/20 rounded-full flex items-center gap-2">
             <Image src="/youtube.png" alt="youtube" width={50} height={50} className="w-4"/>
             YouTube
-          </button>
+          </button> */}
         </div>
       </div>
 
