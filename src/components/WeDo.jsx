@@ -20,7 +20,9 @@ export default function WeDo() {
           expert-led programs are built to push your limits.
         </p>
       </div>
-
+      <div className="relative space-y-46 md:space-y-32">
+        {/* card1 */}
+      <div className="sticky top-32 z-10 bg-[#1a1a19] transition-transform duration-500 backdrop-blur-sm">
       <div className="flex flex-wrap items-center justify-between py-6 px-4 md:px-28">
         <div className="flex md:flex-col items-start gap-6">
           <div className="w-14 h-14 rounded-full bg-[#717171] flex items-center justify-center">
@@ -56,8 +58,11 @@ export default function WeDo() {
         <button className="w-12 h-12 mt-6 md:mt-0 rounded-full border border-gray-600 flex items-center justify-center">
           <ArrowRight size={20} />
         </button>
-      </div>
-      <div className="flex flex-wrap items-center justify-between py-6 px-4 md:px-28 bg-[#EE3324] my-6 md:my-12">
+          </div>
+        </div>
+        {/* card2 */}
+      <div className="sticky top-32 z-20 -mt-40 md:-mt-24 bg-[#EE3324] transition-transform duration-500">
+      <div className="flex flex-wrap items-center justify-between py-6 px-4 md:px-28 bg-[#EE3324]">
         <div className="flex md:flex-col items-start gap-6">
           <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center">
             <Image
@@ -115,8 +120,11 @@ export default function WeDo() {
             </div>
  
         </div>
+          </div>
       </div>
-      <div className="flex flex-wrap items-center justify-between px-4 md:px-28 border-b border-gray-600 py-6 md:pb-20">
+        {/* card3 */}
+      <div className="sticky top-32 z-30 -mt-40 md:-mt-24 bg-[#1a1a19] transition-transform duration-500">
+      <div className="flex flex-wrap items-center justify-between px-4 md:px-28 border-b border-gray-600 pt-10  pb-[80vh] md:pb-40 md:pt-20">
         <div className="flex md:flex-col items-start gap-6">
           <div className="w-14 h-14 rounded-full bg-[#717171] flex items-center justify-center">
             <Image
@@ -140,6 +148,8 @@ export default function WeDo() {
         <button className="w-12 h-12 mt-6 md:mt-0 rounded-full border border-gray-600 flex items-center justify-center">
           <ArrowRight size={20} />
         </button>
+          </div>
+        </div>
       </div>
     </div>
   );
