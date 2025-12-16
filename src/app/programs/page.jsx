@@ -119,6 +119,57 @@ const PlanIcon = ({ className }) => (
 
 const Page = () => {
   const programs = [
+      {
+      name: "IGNITE",
+      description: "No matter how hard you train, your biology sets the ceiling. With optiME Club, we turn guesswork into precision.",
+      tagline: "All-in-one system to help you improve strength, stamina, recovery, and resilience—through Data, Science & Expert Guidance",
+      price: 8999,
+      features: [
+        {
+          icon: DiagnosticsIcon,
+          title: "DIAGNOSTICS",
+          description: "1x Ultra Biomarker test\n1x Health Status Assessment"
+        },
+        {
+          icon: PlanIcon,
+          title: "TOOLS",
+          description: "1x Personalised Health Blueprint\nAccess to Resolute™ app (For 3 Months)\n1x Trainer Signals"
+        },
+        {
+          icon: TargetIcon,
+          title: "COACHING",
+          description: "1x Doctor Consultation\n1x Health Coach Consultation"
+        }
+      ]
+    },
+      {
+      name: "EVOLVE",
+      description: "Is for people who keep quitting, restarting, and feeling lost.",
+      tagline: "A structure you can finally stick to",
+      price: 21999,
+      features: [
+        {
+          icon: DiagnosticsIcon,
+          title: "COMPLETE BLOODWORK PANEL",
+          description: "Hormones, Metabolism, Deficiencies, Inflammation — everything inside your system."
+        },
+        {
+          icon: SearchIcon,
+          title: "DEEP ANALYSIS",
+          description: "we find what’s slowing you down: low energy, bloating, slow metabolism, etc"
+        },
+        {
+          icon: PlanIcon,
+          title: "PRECISION PLAN",
+          description: "Deficiency based supplements, Hormone Supportive Nutrition, Metabolism Friendly Training"
+        },
+        {
+          icon: BadgeIcon,
+          title: "90-DAY OUTCOME",
+          description: "Better Energy, Better Digestion, Better Progress."
+        }
+      ]
+    },
     {
       name: "RESET",
       description: "Is for people whose body has been 'off' for years.",
@@ -151,58 +202,8 @@ const Page = () => {
           description: "Better gut, Better sleep, Better metabolism, Better body."
         }
       ]
-    },
-    {
-      name: "EVOLVE",
-      description: "Is for people who keep quitting, restarting, and feeling lost.",
-      tagline: "A structure you can finally stick to",
-      price: 21999,
-      features: [
-        {
-          icon: DiagnosticsIcon,
-          title: "COMPLETE BLOODWORK PANEL",
-          description: "Hormones, Metabolism, Deficiencies, Inflammation — everything inside your system."
-        },
-        {
-          icon: SearchIcon,
-          title: "DEEP ANALYSIS",
-          description: "we find what’s slowing you down: low energy, bloating, slow metabolism, etc"
-        },
-        {
-          icon: PlanIcon,
-          title: "PRECISION PLAN",
-          description: "Deficiency based supplements, Hormone Supportive Nutrition, Metabolism Friendly Training"
-        },
-        {
-          icon: BadgeIcon,
-          title: "90-DAY OUTCOME",
-          description: "Better Energy, Better Digestion, Better Progress."
-        }
-      ]
-    },
-    {
-      name: "IGNITE",
-      description: "No matter how hard you train, your biology sets the ceiling. With optiME Club, we turn guesswork into precision.",
-      tagline: "All-in-one system to help you improve strength, stamina, recovery, and resilience—through Data, Science & Expert Guidance",
-      price: 8999,
-      features: [
-        {
-          icon: DiagnosticsIcon,
-          title: "DIAGNOSTICS",
-          description: "1x Ultra Biomarker test\n1x Health Status Assessment"
-        },
-        {
-          icon: PlanIcon,
-          title: "TOOLS",
-          description: "1x Personalised Health Blueprint\nAccess to Resolute™ app (For 3 Months)\n1x Trainer Signals"
-        },
-        {
-          icon: TargetIcon,
-          title: "COACHING",
-          description: "1x Doctor Consultation\n1x Health Coach Consultation"
-        }
-      ]
     }
+
   ];
 
   return (

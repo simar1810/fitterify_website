@@ -20,10 +20,10 @@ export default function WeDo() {
           expert-led programs are built to push your limits.
         </p>
       </div>
-      <div className="relative space-y-46 md:space-y-32">
+      <div className="relative md:space-y-32">
         {/* card1 */}
-      <div className="sticky top-32 z-10 bg-[#1a1a19] transition-transform duration-500 backdrop-blur-sm">
-      <div className="flex flex-wrap items-center justify-between py-6 px-4 md:px-28">
+      <div className="md:sticky md:top-32 md:z-10 bg-[#1a1a19] transition-transform duration-500 backdrop-blur-sm">
+      <div className="flex flex-col md:flex-row items-center justify-between py-6 px-4 md:px-28">
         <div className="flex md:flex-col items-start gap-6">
           <div className="w-14 h-14 rounded-full bg-[#717171] flex items-center justify-center">
             <Image
@@ -41,7 +41,7 @@ export default function WeDo() {
             </h2>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:items-center mt-4 md:mt-0">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center mt-4 md:mt-0">
           <div className="flex-col items-center justify-center gap-4">
             <Image src="/wellness_app.png" alt="longevity" width={100} height={100} className="w-24 mb-2 rounded-2xl mx-auto" />
             <div className="flex items-center justify-center gap-2">
@@ -50,9 +50,9 @@ export default function WeDo() {
             </div>
           </div>
           
-         <p className="text-white mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">
+          <p className="text-white text-center md:text-left mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">
               Data-driven insights for daily health, recovery, and performance.
-        </p>
+          </p>
         </div>
 
         <button className="w-12 h-12 mt-6 md:mt-0 rounded-full border border-gray-600 flex items-center justify-center">
@@ -61,8 +61,8 @@ export default function WeDo() {
           </div>
         </div>
         {/* card2 */}
-      <div className="sticky top-32 z-20 -mt-40 md:-mt-24 bg-[#EE3324] transition-transform duration-500">
-      <div className="flex flex-wrap items-center justify-between py-6 px-4 md:px-28 bg-[#EE3324]">
+      <div className="md:sticky md:top-32 md:z-20 md:-mt-24 bg-[#EE3324] transition-transform duration-500">
+      <div className="flex flex-col md:flex-row items-center justify-between py-6 px-4 md:px-28 bg-[#EE3324]">
         <div className="flex md:flex-col items-start gap-6">
           <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center">
             <Image
@@ -79,7 +79,7 @@ export default function WeDo() {
             </h2>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:items-center mt-4 md:mt-0">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center mt-4 md:mt-0">
           <div className="flex-col items-center justify-center gap-4">
             <Image src="/longevity.png" alt="longevity" width={100} height={100} className="w-24 mb-2 rounded-2xl mx-auto" />
             <div className="flex items-center justify-center gap-2">
@@ -87,7 +87,7 @@ export default function WeDo() {
               <Image src="/playstore.png" alt="playstore" width={100} height={40} className="w-18 md:w-20"/>
             </div>
           </div>
-         <p className="text-white mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">
+         <p className="text-white text-center md:text-left mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">
              Programs designed for long-term vitality, not short-term results.
         </p>
         </div>
@@ -105,7 +105,7 @@ export default function WeDo() {
                   
 
 
-           <div className="md:hidden flex flex-col items-start justify-center mt-5 gap-4 w-[90vw]">
+           <div className="md:hidden flex flex-col items-center justify-center mt-5 gap-4 w-[90vw]">
              <button className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center bg-white/10 backdrop-blur">
                 <ArrowRight size={20} color="white" />
              </button>
@@ -123,8 +123,8 @@ export default function WeDo() {
           </div>
       </div>
         {/* card3 */}
-      <div className="sticky top-32 z-30 -mt-40 md:-mt-24 bg-[#1a1a19] transition-transform duration-500">
-      <div className="flex flex-wrap items-center justify-between px-4 md:px-28 border-b border-gray-600 pt-10  pb-[80vh] md:pb-40 md:pt-20">
+      <div className="md:sticky md:top-32 md:z-30 md:-mt-24 bg-[#1a1a19] transition-transform duration-500">
+      <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-28 border-b border-gray-600 pt-10  pb-10 md:pb-40 md:pt-20">
         <div className="flex md:flex-col items-start gap-6">
           <div className="w-14 h-14 rounded-full bg-[#717171] flex items-center justify-center">
             <Image
@@ -142,7 +142,7 @@ export default function WeDo() {
             </h2>
           </div>
         </div>
-        <p className="text-white mt-6 md:mt-12 max-w-sm font-literata leading-relaxed">
+        <p className="text-white text-center md:text-left mt-6 md:mt-12 max-w-sm font-literata leading-relaxed">
               Physical spaces where wellness becomes a lived experience.
         </p>
         <button className="w-12 h-12 mt-6 md:mt-0 rounded-full border border-gray-600 flex items-center justify-center">
