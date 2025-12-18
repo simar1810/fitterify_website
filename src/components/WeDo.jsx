@@ -106,7 +106,7 @@ export default function WeDo() {
             </h2>
           </div>
         </div>
-        <p className="text-white text-center md:text-left mt-6 md:mt-12 max-w-sm font-literata leading-relaxed animate-pulse">Coming Soon...</p> 
+        <p className="text-white text-xl font-semibold text-center md:text-left mt-6 md:mt-12 max-w-sm font-literata leading-relaxed animate-pulse">Coming Soon...</p> 
         <p className="text-white text-center md:text-left mt-6 md:mt-12 max-w-sm font-literata leading-relaxed">
               Physical spaces where wellness becomes a lived experience.
         </p>
