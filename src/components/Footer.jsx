@@ -34,8 +34,8 @@ const Footer = () => {
         </svg>
       </button>
 
-      <footer id="contact" className="w-full bg-linear-to-b from-[#0a0f1a] to-[#000000] text-white px-6 md:px-20 py-16">
-        <div className="max-w-7xl mx-auto relative border md:px-10 md:py-8 px-6 py-8 rounded-3xl border-gray-700/50 bg-linear-to-br from-[#1a2332]/60 via-[#0f1825]/40 to-[#0a0f1a]/60 backdrop-blur-xl shadow-2xl overflow-hidden">
+      <footer id="contact" className="w-full bg-[#1a1a19] text-white px-6 md:px-20 py-16">
+        <div className="max-w-7xl mx-auto relative border md:px-10 md:py-8 px-6 py-8 rounded-3xl border-gray-700/50 bg-linear-to-br from-black via-[#1a1a19] to-[#EE3324] backdrop-blur-xl shadow-xl overflow-hidden shadow-black/10">
           
           <div className="absolute inset-0 bg-linear-to-br from-white/8 via-white/2 to-transparent pointer-events-none"></div>
           <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-white/6 rounded-full blur-[120px] pointer-events-none"></div>
@@ -50,24 +50,24 @@ const Footer = () => {
                 >
                   <Image src="/logo.png" alt="Footer Logo" width={500} height={500} className="w-15 h-15"/>
                 </div>
-                <p className="text-gray-400 text-sm mb-4">
-                  India | USA | Singapore
+                <p className="text-gray-100 text-sm mb-4">
+                  Train with Purpose. <br /> Transform with Power.
                 </p>
-                <div className="space-y-2 text-sm text-gray-400">
+                <div className="space-y-2 text-sm text-gray-300">
                   <p className="flex items-start md:items-center gap-2">
                     <PhoneCall size={15} />
                     <span>+91 94496 31244</span>
                   </p>
-                  <p className="flex items-start md:items-center gap-2">
-                    <Mail size={15}/>
-                    <span className="break-all">vijaykumarrohan1@gmail.com</span>
+                  <p className="flex items-start gap-2">
+                    <Mail size={20}/>
+                    <span className="break-all text-xs md:text-sm">vijaykumarrohan1@gmail.com</span>
                   </p>
                 </div>
               </div>
               
               <div>
                 <h4 className="font-semibold mb-4 text-white">Company</h4>
-                <ul className="space-y-3 text-sm text-gray-400">
+                <ul className="space-y-3 text-sm text-gray-300">
                   <li onClick={() => scrollToSection("about")} className="hover:text-white cursor-pointer transition-colors">About Us</li>
                   <li onClick={() => scrollToSection("home")} className="hover:text-white cursor-pointer transition-colors">Home</li>
                   <li onClick={() => scrollToSection("contact")} className="hover:text-white cursor-pointer transition-colors">Contact Us</li>
@@ -76,7 +76,7 @@ const Footer = () => {
               
               <div>
                 <h4 className="font-semibold mb-4 text-white">Offerings</h4>
-                <ul className="space-y-3 text-sm text-gray-400">
+                <ul className="space-y-3 text-sm text-gray-300">
                   <li className="hover:text-white cursor-pointer transition-colors">Coaching</li>
                   <li className="hover:text-white cursor-pointer transition-colors">Programs</li>
                   <li className="hover:text-white cursor-pointer transition-colors">Corporate Wellness</li>
@@ -85,10 +85,10 @@ const Footer = () => {
               
               <div>
                 <h4 className="font-semibold mb-4 text-white">Resources</h4>
-                <ul className="space-y-3 text-sm text-gray-400">
+                <ul className="space-y-3 text-sm text-gray-300">
                   <li onClick={() => scrollToSection("trainer")} className="hover:text-white cursor-pointer transition-colors">Trainers</li>
                   <li className="hover:text-white cursor-pointer transition-colors">Success Stories</li>
-                  <li className="hover:text-white cursor-not-allowed opacity-50">Pricing</li>
+                  <li className="hover:text-white cursor-pointer">Pricing</li>
                 </ul>
               </div>
               
@@ -96,7 +96,7 @@ const Footer = () => {
                 <h4 className="font-semibold mb-4 text-white flex items-center gap-2">
                   ⏳ Our Timings
                 </h4>
-                <div className="space-y-3 text-sm text-gray-400">
+                <div className="space-y-3 text-sm text-gray-300">
                   <div>
                     <p className="font-medium text-white">Mon–Sat:</p>
                     <p>6:00 AM – 10:00 PM</p>
@@ -111,22 +111,22 @@ const Footer = () => {
 
             <div className="border-t border-white/10 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div className="text-sm text-gray-400 text-center md:text-left">
+                <div className="text-sm text-gray-300 text-center md:text-left">
                   <p>© 2025 Fitterify Health Solutions Private Limited. All rights reserved.</p>
                   <p className="text-xs mt-1">powered by WellnessZ</p>
                 </div>
 
-                <div className="flex items-center gap-6 text-xs text-gray-400">
+                <div className="flex items-center gap-6 text-xs text-gray-300">
                   <span className="flex items-center gap-2">
-                    <span className="w-5 h-5 border border-gray-500 rounded-full flex items-center justify-center">✓</span>
+                    <span className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">✓</span>
                     HIPAA
                   </span>
                   <span className="flex items-center gap-2">
-                    <span className="w-5 h-5 border border-gray-500 rounded-full flex items-center justify-center">✓</span>
+                    <span className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">✓</span>
                     GDPR
                   </span>
                   <span className="flex items-center gap-2">
-                    <span className="w-5 h-5 border border-gray-500 rounded-full flex items-center justify-center">✓</span>
+                    <span className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">✓</span>
                     DPDPA
                   </span>
                 </div>
