@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 const Footer = () => {
   const router = useRouter();
@@ -76,7 +75,11 @@ const Footer = () => {
       </div>
       <div className="border-t border-white/10 mt-12 pt-6" />
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white">
-        <p className="text-center md:text-left">© 2025 Fitterify. All rights reserved. <br /><span>powered by WellnessZ</span></p>
+        <p className="text-center md:text-left">
+          © 2025 Fitterify Pvt Sol Ltd. All rights reserved.
+          <br />
+          <span>powered by WellnessZ</span>
+        </p>
         <div className="flex flex-wrap gap-4">
           <button onClick={()=>router.push("https://www.facebook.com/profile.php?id=100083752502766&mibextid=wwXIfr&mibextid=wwXIfr")} className="px-4 cursor-pointer py-2 border border-white/20 rounded-full flex items-center gap-2">
             <Image src="/facebook.png" alt="facebook" width={50} height={50} className="w-4"/>        
