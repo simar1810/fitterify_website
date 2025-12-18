@@ -1,13 +1,12 @@
+"use client"
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 export default function HeroSection() {
+  const router = useRouter();
   return (
     <div
       id="home"
-      className="
-      relative w-full h-[135vh] md:h-screen flex flex-col md:flex-row  items-center justify-between md:pr-48 lg:pr-28 2xl:pr-52
-      bg-[#050504] overflow-hidden
-      "
+      className="relative w-full h-[135vh] md:h-screen flex flex-col md:flex-row  items-center justify-between md:pr-48 lg:pr-28 2xl:pr-52 bg-[#050504] overflow-hidden"
     >
 
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
@@ -34,8 +33,8 @@ export default function HeroSection() {
 
         </p>
 
-        <div className="flex items-center mt-[4vh] mb-[2vh] lg:mt-6 xl:mt-8">
-          <button className="px-8 py-3 rounded-full text-white text-sm font-bold bg-[#f5594efc]">
+        <div onClick={()=>router.push("/app")} className="cursor-pointer flex items-center mt-[4vh] mb-[2vh] lg:mt-6 xl:mt-8">
+          <button className="px-8 py-3 rounded-full cursor-pointer text-white text-sm font-bold bg-[#f5594efc]">
             Explore the Platform
           </button>
 

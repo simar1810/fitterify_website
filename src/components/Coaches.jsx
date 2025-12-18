@@ -19,17 +19,20 @@ const Coaches = () => {
 
   const trainers = [
   {
-    name: "Afnaz",
+      // name: "Afnaz",
+    id:1,
     role: "HIIT & Fat Loss Expert",
     img: "/trainer1.png",
   },
-  {
-    name: "Sourav",
+    {
+    id:2,
+    // name: "Sourav",
     role: "Strength & Conditioning Coach",
     img: "/trainer2.png",
   },
-  {
-    name: "Joel",
+    {
+    id:3,
+    // name: "Joel",
     role: "Weight Loss & Toning Expert",
     img: "/trainer3.png",
   },
@@ -44,8 +47,7 @@ const Coaches = () => {
     return () => clearInterval(interval);
   }, [trainers.length]);
   return (
-    <div className="md:sticky md:top-32 md:z-60 md:-mt-24 bg-[#1a1a19] transition-transform duration-500 backdrop-blur-sm">
-    <section id="trainer" className="w-full bg-[#1a1a19] py-24 px-6 text-white">
+    <section id="trainer" className="w-full bg-[#1a1a19] py-16 px-6 text-white">
       <div className="max-w-7xl mx-auto text-center">
 
         <span className="inline-block bg-[#EE3324] font-semibold text-sm px-5 py-2 rounded-full mb-6">
@@ -60,16 +62,16 @@ const Coaches = () => {
         </p>
 
         {/* DESKTOP GRID */}
-        <div className="hidden md:grid grid-cols-3 gap-10">
+        <div className="hidden md:grid grid-cols-3 gap-4">
           {trainers.map((trainer) => (
-            <div key={trainer.name} className="flex flex-col items-center">
+            <div key={trainer.id} className="flex flex-col items-center">
               <div className="rounded-2xl bg-transparent w-full max-w-[260px] relative">
                 <Image src="/Pattern.png" alt="pattern" width={500} height={500} className="w-full h-[360px] object-cover" />
                 <Image src={trainer.img} alt="trainer" width={1000} height={1000} className="w-full h-[360px] absolute  top-[-15px] left-[-15px]"/>
               </div>
 
-              <h4 className="mt-6 font-bold">{trainer.name}</h4>
-              <p className="text-sm text-white">{trainer.role}</p>
+              {/* <h4 className="mt-6 font-bold">{trainer.name}</h4> */}
+              <p className="text-base text-white font-semibold mt-4">{trainer.role}</p>
             </div>
           ))}
         </div>
@@ -98,7 +100,7 @@ const Coaches = () => {
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {trainers.map((trainer) => (
-                <div key={trainer.name} className="min-w-full flex justify-center">
+                <div key={trainer.id} className="min-w-full flex justify-center">
                   <div className="flex flex-col items-center">
                     <div className="rounded-2xl bg-transparent w-[260px] relative">
                       <Image
@@ -117,8 +119,8 @@ const Coaches = () => {
                       />
                     </div>
               
-                    <h4 className="mt-4 font-semibold">{trainer.name}</h4>
-                    <p className="text-sm text-gray-400">{trainer.role}</p>
+                    {/* <h4 className="mt-4 font-semibold">{trainer.name}</h4> */}
+                    <p className="text-base text-gray-400 font-semibold mt-4 md:mt-0">{trainer.role}</p>
                   </div>
                 </div>
               ))}
@@ -140,14 +142,13 @@ const Coaches = () => {
           
         </div>
 
-        <div className="hidden md:flex justify-center mt-20">
+        {/* <div className="hidden md:flex justify-center mt-20">
           <button className="bg-[#717171] hover:bg-gray-600 transition text-sm px-6 py-3 rounded-full">
             View All Trainers
           </button>
-        </div>
+        </div> */}
       </div>
       </section>
-    </div>
   );
 };
 

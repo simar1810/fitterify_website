@@ -16,10 +16,8 @@ export default function Home() {
       {/* <FloatingSection /> */}
       <AboutSection />
       <WeDo />
-      <div className="relative md:space-y-32 bg-black">
         <TargetAud />
         <Coaches/>
-      </div>
       <Stories />
       <Footer/>
     </div>
