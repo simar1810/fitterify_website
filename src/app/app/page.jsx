@@ -14,7 +14,7 @@ export default function Page() {
           <Link href="https://play.google.com/store/apps/details?id=com.wellnessz.fitterifyapp" target="_blank">
             <Image src="/playstore.png" alt="Google Store" width={500} height={400} className="cursor-pointer w-30 md:w-[10vw]" />
           </Link>
-          <Link href="https://apps.apple.com/us/app/wellnessz/id6478812964" target="_blank">
+          <Link href="https://apps.apple.com/us/app/fitterify/id6756501595" target="_blank">
             <Image src="/appStore.png" alt="App Store" width={500} height={400} className="cursor-pointer w-30 md:w-[10vw]" />
           </Link>
         </div>
