@@ -112,7 +112,7 @@ const Footer = () => {
             <div className="border-t border-white/10 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div className="text-sm text-gray-400 text-center md:text-left">
-                  <p>© FITTERIFY 2025. All rights reserved</p>
+                  <p>© 2025 Fitterify Health Solutions Private Limited. All rights reserved.</p>
                   <p className="text-xs mt-1">powered by WellnessZ</p>
                 </div>
 
