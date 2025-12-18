@@ -11,7 +11,7 @@ export default function Page() {
         <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-4xl font-bold mb-5">Download The <br /> <span className="text-4xl md:text-6xl lg:text-7xl xl:text-6xl">Fitterify App</span></h1>
         <p className="text-sm md:text-xl lg:text-3xl xl:text-xl mb-5 opacity-70 ">Begin your journey Towards Making People Healthy</p>
         <div className="flex justify-between items-center gap-5 mb-5">
-          <Link href="https://play.google.com/store/apps/details?id=com.wellnessz.banne&pcampaignid=web_share" target="_blank">
+          <Link href="https://play.google.com/store/apps/details?id=com.wellnessz.fitterifyapp" target="_blank">
             <Image src="/playstore.png" alt="Google Store" width={500} height={400} className="cursor-pointer w-30 md:w-[10vw]" />
           </Link>
           <Link href="https://apps.apple.com/us/app/wellnessz/id6478812964" target="_blank">
