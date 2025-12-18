@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function WeDo() {
+  const router = useRouter();
   return (
     <div className="w-full bg-[#1a1a19] text-white py-20">
       <div className="text-center mx-auto mb-20 border-b border-gray-600 w-full pb-10 px-4 md:px-0">
@@ -44,8 +47,8 @@ export default function WeDo() {
         <div className="flex-col items-center justify-center gap-4">
             <Image src="/wellness_app.png" alt="longevity" width={100} height={100} className="w-24 mb-2 rounded-2xl mx-auto" />
             <div className="flex items-center justify-center gap-2">
-              <Image src="/appStore.png" alt="appstore" width={100} height={40} className="w-18 md:w-20"/>
-              <Image src="/playstore.png" alt="playstore" width={100} height={40} className="w-18 md:w-20"/>
+              <Image onClick={()=>router.push("https://apps.apple.com/us/app/fitterify/id6756501595")} src="/appStore.png" alt="appstore" width={100} height={40} className="cursor-pointer w-18 md:w-20"/>
+              <Image onClick={()=>router.push("https://play.google.com/store/apps/details?id=com.wellnessz.fitterifyapp")} src="/playstore.png" alt="playstore" width={100} height={40} className="cursor-pointer w-18 md:w-20"/>
             </div>
         </div>
         <p className="text-white text-center md:text-left mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">
@@ -75,8 +78,8 @@ export default function WeDo() {
           <div className="flex-col items-center justify-center gap-4">
             <Image src="/longevity.png" alt="longevity" width={100} height={100} className="w-24 mb-2 rounded-2xl mx-auto" />
             <div className="flex items-center justify-center gap-2">
-              <Image src="/appStore.png" alt="appstore" width={100} height={40} className="w-18 md:w-20"/>
-              <Image src="/playstore.png" alt="playstore" width={100} height={40} className="w-18 md:w-20"/>
+              <Image onClick={()=>router.push("https://apps.apple.com/us/app/fitterify/id6756501595")} src="/appStore.png" alt="appstore" width={100} height={40} className="cursor-pointer w-18 md:w-20"/>
+              <Image onClick={()=>router.push("https://play.google.com/store/apps/details?id=com.wellnessz.fitterifyapp")} src="/playstore.png" alt="playstore" width={100} height={40} className="cursor-pointer w-18 md:w-20"/>
             </div>
           </div>
          <p className="text-white text-center md:text-left mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">

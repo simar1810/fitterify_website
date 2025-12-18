@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   const handleWhatsApp = () => {
-    const phoneNumber = "919815919243";
+    const phoneNumber = "919449631244";
     const message = "Hi! I'm interested in learning more about Fitterify.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -56,11 +56,11 @@ const Footer = () => {
                 <div className="space-y-2 text-sm text-gray-400">
                   <p className="flex items-start md:items-center gap-2">
                     <PhoneCall size={15} />
-                    <span>+91 98159 19243</span>
+                    <span>+91 94496 31244</span>
                   </p>
                   <p className="flex items-start md:items-center gap-2">
                     <Mail size={15}/>
-                    <span className="break-all">support@fitterify.com</span>
+                    <span className="break-all">vijaykumarrohan1@gmail.com</span>
                   </p>
                 </div>
               </div>
@@ -142,7 +142,7 @@ const Footer = () => {
                     </svg>
                   </button>
                   <button 
-                    onClick={() => handleNavigation("https://www.linkedin.com")}
+                    onClick={() => handleNavigation("https://www.linkedin.com/company/99127944/admin/dashboard/")}
                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                     aria-label="LinkedIn"
                   >
