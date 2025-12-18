@@ -1,8 +1,44 @@
 "use client"
 import Navbar from '@/components/NavbarRebound';
+import { fetchData } from '@/lib/api';
+import { getRazorpyaOptions, loadRazorpayScript } from '@/lib/razorpay';
 import React, { useState } from 'react';
 
 const ProgramCard = ({ program }) => {
+  const [payLoading, setPayLoading] = useState()
+  const [error, setError] = useState()
+
+  const programName = program.name?.toLowerCase()
+
+  async function handlePay() {
+    setPayLoading(true);
+    setError("");
+    try {
+      const loaded = await loadRazorpayScript();
+      console.log("CONDITION HIT", loaded)
+      if (!loaded) {
+        setError("Failed to load Razorpay script.");
+        setPayLoading(false);
+        return;
+      }
+      // Create Razorpay order using backend API
+      const res = await fetchData(`razorpay/fitterify-order?program=${programName}`);
+      if (res?.status_code !== 200) {
+        setError(res?.message || "Could not create Razorpay order.");
+        setPayLoading(false);
+        return;
+      }
+      const options = getRazorpyaOptions(res.data)
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (err) {
+      console.error(err)
+      toast.error(err.message || "Something went wrong")
+      setError("Could not launch Razorpay checkout.");
+    } finally {
+      setPayLoading(false);
+    }
+  }
 
   return (
     <div className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 flex flex-col h-full">
@@ -54,7 +90,7 @@ const ProgramCard = ({ program }) => {
               </span>
               <span className="text-gray-500 text-sm ml-2">+GST</span>
             </div>
-            <button className="bg-[#EE3324] text-white px-4 py-1 lg:py-2 xl:py-3 rounded-full font-semibold hover:bg-[#d62b1f] transition-colors">
+            <button onClick={handlePay} className="cursor-pointer bg-[#EE3324] text-white px-4 py-1 lg:py-2 xl:py-3 rounded-full font-semibold hover:bg-[#d62b1f] transition-colors">
               <p className='lg:text-sm xl:text-base'>Get Started</p>
             </button>
           </div>
@@ -119,7 +155,7 @@ const PlanIcon = ({ className }) => (
 
 const Page = () => {
   const programs = [
-      {
+    {
       name: "IGNITE",
       description: "No matter how hard you train, your biology sets the ceiling. With optiME Club, we turn guesswork into precision.",
       tagline: "All-in-one system to help you improve strength, stamina, recovery, and resilience—through Data, Science & Expert Guidance",
@@ -142,7 +178,7 @@ const Page = () => {
         }
       ]
     },
-      {
+    {
       name: "EVOLVE",
       description: "Is for people who keep quitting, restarting, and feeling lost.",
       tagline: "A structure you can finally stick to",
@@ -208,25 +244,25 @@ const Page = () => {
 
   return (
     <div>
-     <Navbar/>     
-    <div className="min-h-screen bg-white pt-30 pb-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-2xl md:text-5xl font-bold text-[#050504] mb-4">
-            Our Programs
-          </h1>
-          <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-            Choose the program that fits your health journey. Each designed with precision to help you achieve lasting transformation.
-          </p>
-        </div>
+      <Navbar />
+      <div className="min-h-screen bg-white pt-30 pb-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-2xl md:text-5xl font-bold text-[#050504] mb-4">
+              Our Programs
+            </h1>
+            <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
+              Choose the program that fits your health journey. Each designed with precision to help you achieve lasting transformation.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {programs.map((program, index) => (
-            <ProgramCard key={index} program={program} />
-          ))}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {programs.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
         </div>
       </div>
-          </div>
     </div>
   );
 };
