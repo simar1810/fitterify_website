@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 
@@ -7,7 +8,7 @@ function CountUp({ end }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const started = useRef(false);
-
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -45,11 +46,12 @@ function CountUp({ end }) {
 }
 
 const AboutSection = () => {
+  const router = useRouter();
   return (
     <div id="about" className="w-full bg-[#050505] py-24 px-6 xl:px-20 2xl:px-6 flex justify-center">
       <div className="max-w-[1300px] w-full grid grid-cols-1 md:grid-cols-3 gap-20 items-center">
         <div>
-          <p className="text-xs font-semibold text-[#EE3324] bg-[#1a1a1a] w-fit px-3 py-3 rounded-full">
+          <p className="text-lg font-semibold text-[#EE3324] bg-[#1a1a1a] w-fit px-3 py-3 rounded-full">
             About Fitterify
           </p>
 
@@ -64,7 +66,7 @@ const AboutSection = () => {
         </div>
         <div className=" w-full md:w-80 px-4  py-5 text-center flex flex-row md:flex-col justify-between items-center">
           <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-[#EE3324] flex items-center justify-center mb-4">
-            <Image src="/barbell.png" alt="icon" width={24} height={24} />
+            <Image src="/barbell_white.png" alt="icon" width={24} height={24} />
           </div>
 
           <p className="text-[#FFFFFF] text-base w-20 md:w-auto md:text-xl font-semibold">
@@ -103,8 +105,8 @@ const AboutSection = () => {
             At Fitterify, our community isn’t just showing up — they’re leveling up. From newcomers to elite athletes, every member pushes harder, lifts stronger, and supports one another through every rep.
           </p>
 
-          <button className="mt-6 md:mt-10 px-6 py-3 border w-full border-white rounded-full font-bold text-white flex items-center justify-between gap-2 hover:bg-white hover:text-black transition">
-            Read More About Us
+          <button onClick={()=>router.push("/app")} className="cursor-pointer mt-6 md:mt-10 px-6 py-3 border w-full border-white rounded-full font-bold text-white flex items-center justify-between gap-2 hover:bg-white hover:text-black transition">
+            Explore the Platform
             <Image
               src="/home-cta.png"
               alt="arrow"

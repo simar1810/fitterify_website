@@ -4,7 +4,6 @@ import {BadgeCheck} from "lucide-react"
 
 const TargetAud = () => {
   return (
-    <div className="md:sticky md:top-32 md:z-50 bg-black transition-transform duration-500 backdrop-blur-sm">
     <section className="w-full bg-black text-white py-20">
       <div className="max-w-[1300px] mx-auto px-4 xl:px-24 lg:px-8 2xl:px-6  grid md:grid-cols-2 gap-12 xl:gap-8 2xl:gap-12 items-start justify-between">
 
@@ -80,7 +79,6 @@ const TargetAud = () => {
         </div>
       </div>
       </section>
-    </div>
   );
 };
 
