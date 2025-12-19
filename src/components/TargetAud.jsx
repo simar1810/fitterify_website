@@ -33,16 +33,16 @@ const TargetAud = () => {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="relative w-[85vw] md:w-[35vw] lg:w-[38vw] xl:w-[38vw] 2xl:w-[35vw]">
-          <div className="absolute -top-2.5 2xl:top-[-5px] left-1 lg:left-2 2xl:left-4 w-20 h-20 md:w-28 md:h-28 lg:w-22 lg:h-22 xl:w-28 xl:h-28 bg-[#EE3324] rounded-full flex items-center justify-center">
-          <div className="w-15 h-15 md:w-21 md:h-21 lg:w-16 lg:h-16 xl:w-21 xl:h-21 bg-transparent rounded-full flex items-center justify-center ring-2 ring-white">     
-            <div className="w-10 h-10 rounded-full md:w-15 md:h-15 lg:w-8 lg:h-8 xl:w-15 xl:h-15 bg-white flex items-center justify-center">
+        <div className="relative w-[90vw] md:w-[35vw] lg:w-[38vw] xl:w-[38vw] 2xl:w-[35vw]">
+          <div className="absolute md:top-2 md:left-2  w-20 h-20 md:w-28 md:h-28 lg:w-22 lg:h-22 xl:w-28 xl:h-28 bg-[#EE3324] rounded-2xl flex items-center justify-center">
+          <div className="w-15 h-15 md:w-21 md:h-21 lg:w-16 lg:h-16 xl:w-21 xl:h-21 bg-transparent rounded-2xl flex items-center justify-center ring-2 ring-white">     
+            <div className="w-10 h-10 rounded-2xl md:w-15 md:h-15 lg:w-8 lg:h-8 xl:w-15 xl:h-15 bg-white flex items-center justify-center">
                 <Image src="/footer-logo.png" alt="footer-logo" width={500} height={500} className="w-5 md:w-10 lg:w-5 xl:w-10"/>
             </div>
           </div>            
           </div>
           <Image
-            src="/pickleball.png"
+            src="/pickle.png"
             width={2000}
             height={2000}
             alt="target audience"
