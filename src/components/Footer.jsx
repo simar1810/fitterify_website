@@ -116,21 +116,6 @@ const Footer = () => {
                   <p className="text-xs mt-1">powered by WellnessZ</p>
                 </div>
 
-                <div className="flex items-center gap-6 text-xs text-gray-300">
-                  <span className="flex items-center gap-2">
-                    <span className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">✓</span>
-                    HIPAA
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <span className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">✓</span>
-                    GDPR
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <span className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">✓</span>
-                    DPDPA
-                  </span>
-                </div>
-
                 <div className="flex gap-3">
                   <button 
                     onClick={() => handleNavigation("https://www.instagram.com/fitterify?igsh=ZjV5bndodWxidGRp")}
