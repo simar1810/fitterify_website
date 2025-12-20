@@ -1,5 +1,6 @@
 "use client"
-import Navbar from '@/components/NavbarRebound';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import { fetchData } from '@/lib/api';
 import { getRazorpyaOptions, loadRazorpayScript } from '@/lib/razorpay';
 import React, { useState } from 'react';
@@ -41,37 +42,28 @@ const ProgramCard = ({ program }) => {
   }
 
   return (
-    <div className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 flex flex-col h-full">
-      <div className="p-8 grow flex flex-col">
-        <div className="mb-6">
-          <h2 className="text-4xl font-bold text-[#050504] mb-2">
-            {program.name}
-          </h2>
-          <p className="text-sm font-medium text-gray-500 mb-3">
-            with <span className='text-[#EE3324]'>FITTERIFY</span>
-          </p>
-          <p className="text-gray-600 text-sm leading-relaxed">
-            {program.description}
-          </p>
-        </div>
-
-        <div className="inline-block mb-6">
-          <span className="bg-[#52524f] text-white px-2 py-2 rounded-full text-[10px] font-semibold italic">
-            WHAT&apos;S INCLUDED
-          </span>
+    <div className="relative rounded-2xl">
+      <div className="bg-[#FFFFFF0D] backdrop-blur-2xl rounded-2xl p-8 h-full flex flex-col shadow-md hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-[#EE3324] ring-1 ring-white/10">
+        <div className="mb-8">
+          <h3 className="text-white text-2xl font-bold mb-3">{program.name}</h3>
+          <div className="flex items-baseline gap-2 mb-4">
+            <span className="text-[#EE3324] text-3xl font-bold">₹{program.price.toLocaleString('en-IN')}</span>
+            <span className="text-[#EE3324] text-lg">only /-</span>
+          </div>
+          <div className='border-[0.5px] border-gray-800 w-full'></div>
         </div>
 
         <div className="space-y-6 mb-8 grow">
           {program.features.map((feature, idx) => (
             <div key={idx} className="flex items-start gap-4">
-              <div className="shrink-0 w-14 h-14 rounded-full bg-[#EE3324] flex items-center justify-center">
-                <feature.icon className="w-7 h-7 text-white" />
+              <div className="shrink-0 mt-1">
+                <feature.icon className="w-6 h-6 text-white" />
               </div>
-              <div className="flex-1">
-                <h3 className="font-bold text-[#050504] text-lg mb-1">
+              <div>
+                <h4 className="text-white font-bold text-base mb-1">
                   {feature.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                </h4>
+                <p className="font-poppins text-gray-400 text-sm leading-relaxed whitespace-pre-line">
                   {feature.description}
                 </p>
               </div>
@@ -79,22 +71,13 @@ const ProgramCard = ({ program }) => {
           ))}
         </div>
 
-        <div className="border-t border-gray-200 pt-6 mt-auto">
-          <p className="text-gray-600 text-sm mb-4">
-            {program.tagline}
-          </p>
-          <div className="flex items-end justify-between">
-            <div>
-              <span className="text-xl xl:text-4xl font-bold text-[#050504]">
-                ₹{program.price.toLocaleString('en-IN')}
-              </span>
-              <span className="text-gray-500 text-sm ml-2">+GST</span>
-            </div>
-            <button onClick={handlePay} className="cursor-pointer bg-[#EE3324] text-white px-4 py-1 lg:py-2 xl:py-3 rounded-full font-semibold hover:bg-[#d62b1f] transition-colors">
-              <p className='lg:text-sm xl:text-base'>Get Started</p>
-            </button>
-          </div>
-        </div>
+        <button 
+          onClick={handlePay}
+          disabled={payLoading}
+          className="w-full bg-[#EE3324] hover:bg-red-700 text-white font-semibold py-4 rounded-full transition-colors disabled:opacity-50"
+        >
+          {payLoading ? "Processing..." : "Buy Now"}
+        </button>
       </div>
     </div>
   );
@@ -243,27 +226,31 @@ const Page = () => {
   ];
 
   return (
-    <div>
-      <Navbar />
-      <div className="min-h-screen bg-white pt-30 pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-2xl md:text-5xl font-bold text-[#050504] mb-4">
-              Our Programs
-            </h1>
-            <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-              Choose the program that fits your health journey. Each designed with precision to help you achieve lasting transformation.
-            </p>
-          </div>
+      <div id='program' className="bg-[#050504] min-h-screen">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+         <div className="w-[900px] h-[1000px] bg-[radial-gradient(circle,rgba(255,50,30,0.22),transparent_70%)] blur-3xl"></div>
+       </div>
+        <Navbar landing={false} />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {programs.map((program, index) => (
-              <ProgramCard key={index} program={program} />
-            ))}
-          </div>
-        </div>
+    <div className="min-h-screen pt-38 pb-16 px-4">
+      <div className="text-center mb-16 max-w-4xl mx-auto">
+        <h1 className="text-4xl md:text-6xl font-semibold text-white mb-4">
+          Pricing Plans
+          </h1>
+          <div className='w-60 border-2 mb-2 border-[#EE3324] text-center mx-auto'></div>
+        <p className="font-poppins text-gray-400 text-base md:text-lg max-w-3xl mx-auto">
+          Choose the program that fits your health journey. Each designed with precision to help you achieve lasting transformation.
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {programs.map((program, index) => (
+          <ProgramCard key={index} program={program} index={index} />
+        ))}
       </div>
     </div>
+      <Footer landing={false} />
+      </div>
   );
 };
 

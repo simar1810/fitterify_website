@@ -101,11 +101,11 @@ const AboutSection = () => {
           </div>
         </div>
         <div className="text-[#EDEDED] text-[15px] leading-3 md:pr-8 ">
-          <p className="font-literata text-lg lg:text-base xl:text-lg leading-6">
+          <p className={`font-poppins text-lg lg:text-base xl:text-lg leading-6`}>
             At Fitterify, our community isn’t just showing up — they’re leveling up. From newcomers to elite athletes, every member pushes harder, lifts stronger, and supports one another through every rep.
           </p>
 
-          <button onClick={()=>router.push("/app")} className="cursor-pointer mt-6 md:mt-10 px-6 py-3 border w-full border-white rounded-full font-bold text-white flex items-center justify-between gap-2 hover:bg-white hover:text-black transition">
+          {/* <button onClick={()=>router.push("/app")} className="cursor-pointer mt-6 md:mt-10 px-6 py-3 border w-full border-white rounded-full font-bold text-white flex items-center justify-between gap-2 hover:bg-white hover:text-black transition">
             Explore the Platform
             <Image
               src="/home-cta.png"
@@ -114,7 +114,7 @@ const AboutSection = () => {
               height={14} className="w-5"
                           
             />
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

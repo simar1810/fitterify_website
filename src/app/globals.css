@@ -13,3 +13,7 @@
   display: inline-flex;
   animation: scroll 15s linear infinite;
 }
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}

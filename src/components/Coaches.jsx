@@ -56,7 +56,7 @@ const Coaches = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Expert <span className="text-[#EE3324]">Trainers</span> Who Inspire Results
         </h2>
-        <p className="text-[#EDEDED] max-w-2xl mx-auto mb-16">
+        <p className="text-[#EDEDED] max-w-2xl mx-auto mb-16 font-poppins">
           Every Fitterify coach is certified, committed, and here to help you push
           limits whether you&apos;re just getting started or chasing your next PR.
         </p>
