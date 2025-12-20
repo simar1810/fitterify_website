@@ -8,11 +8,11 @@ export default function WeDo() {
   return (
     <div className="w-full bg-[#1a1a19] text-white py-20">
       <div className="text-center mx-auto mb-20 border-b border-gray-600 w-full pb-10 px-4 md:px-0">
-        <button className="px-5 py-1 rounded-full bg-[#323131] text-sm text-white font-bold">
+        <button className="px-5 py-1 rounded-full bg-[#323131] text-sm text-white font-extrabold uppercase">
           What we Do
         </button>
 
-        <h1 className="text-2xl md:text-3xl font-bold mt-4 leading-snug">
+        <h1 className="text-2xl md:text-3xl font-extrabold mt-4 leading-snug">
           Train <span className="text-[#EE3324]">Smarter.</span>{" "}
           Perform <span className="text-[#EE3324]">Better.</span>{" "}
           Grow <span className="text-[#EE3324]">Stronger.</span>
@@ -30,7 +30,7 @@ export default function WeDo() {
         <div className="flex items-center gap-6">
           <div className="w-14 h-14 rounded-full bg-[#717171] flex items-center justify-center">
             <Image
-              src="/Group.png"
+              src="/wedo1.png"
               width={32}
               height={32}
               alt="icon"
@@ -93,7 +93,7 @@ export default function WeDo() {
         <div className="flex items-center gap-6">
           <div className="w-14 h-14 rounded-full bg-[#717171] flex items-center justify-center">
             <Image
-              src="/Group3.png"
+              src="/wedo3.png"
               width={32}
               height={32}
               alt="icon"

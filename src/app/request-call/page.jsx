@@ -146,7 +146,7 @@ const CallBackFormSection = () => {
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-[#EE3324] hover:bg-[#d62b1f] text-white font-semibold py-4 rounded-full transition-colors duration-300 mt-8"
+                className="bg-[#EE3324] cursor-pointer hover:bg-[#da594f] text-white font-bold uppercase px-8 py-4 rounded-[20px] transition-colors duration-300 text-sm md:text-base mt-6"
               >
                 Request a Call Back
               </button>
@@ -184,14 +184,14 @@ const Page = () => {
        </div>
         <Navbar landing={false} />
 
-    <div className="min-h-screen pt-38 xl:pt-52 2xl:pt-38 pb-16 px-4">
+    <div className="min-h-screen pt-38 xl:pt-52 2xl:pt-44 pb-16 px-4">
       <div className="text-center mb-16 max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-5xl font-semibold text-white mb-4">
+        <h1 className="text-3xl md:text-5xl font-extrabold uppercase text-white mb-4">
           Get a Call Back
           </h1>
           <div className='w-60 border-2 mb-2 border-[#EE3324] text-center mx-auto'></div>
-        <p className="font-poppins text-gray-400 text-sm md:text-lg max-w-3xl mx-auto">
-          Ready to transform lives as a certified coach? Share your details and our team will connect with you to discuss coaching opportunities. 
+        <p className="font-poppins text-[#EDEDED] text-sm md:text-lg max-w-4xl mx-auto">
+          Request a call back - Dream of making a real difference? Let’s connect and turn your passion into purpose. 
         </p>
       </div>              
         <CallBackFormSection />

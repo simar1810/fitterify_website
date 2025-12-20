@@ -45,10 +45,10 @@ const ProgramCard = ({ program }) => {
     <div className="relative rounded-2xl">
       <div className="bg-[#FFFFFF0D] backdrop-blur-2xl rounded-2xl p-8 h-full flex flex-col shadow-md hover:shadow-2xl transition-all duration-300 hover:scale-105 shadow-[#EE3324] ring-1 ring-white/10">
         <div className="mb-8">
-          <h3 className="text-white text-2xl font-bold mb-3">{program.name}</h3>
-          <div className="flex items-baseline gap-2 mb-4">
-            <span className="text-[#EE3324] text-3xl font-bold">₹{program.price.toLocaleString('en-IN')}</span>
-            <span className="text-[#EE3324] text-lg">only /-</span>
+          <h3 className="text-white text-2xl font-extrabold mb-3">{program.name}</h3>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-[#EE3324] text-3xl font-semibold">MRP: ₹{program.price.toLocaleString('en-IN')}</span>
+            <span className="text-[#EDEDED80] font-poppins text-sm">Excl. of taxes</span>
           </div>
           <div className='border-[0.5px] border-gray-800 w-full'></div>
         </div>
@@ -60,7 +60,7 @@ const ProgramCard = ({ program }) => {
                 <feature.icon className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 className="text-white font-bold text-base mb-1">
+                <h4 className="text-white font-extrabold text-base mb-1">
                   {feature.title}
                 </h4>
                 <p className="font-poppins text-gray-400 text-sm leading-relaxed whitespace-pre-line">
@@ -232,14 +232,14 @@ const Page = () => {
        </div>
         <Navbar landing={false} />
 
-    <div className="min-h-screen pt-38 pb-16 px-4">
+    <div className="min-h-screen pt-44 pb-16 px-4">
       <div className="text-center mb-16 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-semibold text-white mb-4">
+        <h1 className="text-4xl md:text-6xl font-extrabold uppercase text-white mb-4">
           Pricing Plans
           </h1>
           <div className='w-60 border-2 mb-2 border-[#EE3324] text-center mx-auto'></div>
-        <p className="font-poppins text-gray-400 text-base md:text-lg max-w-3xl mx-auto">
-          Choose the program that fits your health journey. Each designed with precision to help you achieve lasting transformation.
+        <p className="font-poppins text-[#EDEDED] text-base md:text-lg max-w-3xl mx-auto">
+          Pick a plan, commit to your journey, and let the transformation begin.
         </p>
       </div>
 

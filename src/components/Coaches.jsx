@@ -50,10 +50,10 @@ const Coaches = () => {
     <section id="trainer" className="w-full bg-[#1a1a19] py-16 px-6 text-white">
       <div className="max-w-7xl mx-auto text-center">
 
-        <span className="inline-block bg-[#EE3324] font-semibold text-sm px-5 py-2 rounded-full mb-6">
+        <span className="inline-block bg-[#EE3324] font-extrabold uppercase text-sm px-5 py-2 rounded-full mb-6">
           Meet Our Coaches
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
           Expert <span className="text-[#EE3324]">Trainers</span> Who Inspire Results
         </h2>
         <p className="text-[#EDEDED] max-w-2xl mx-auto mb-16 font-poppins">
