@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { useState } from 'react'
 import Image from 'next/image'
+import { toast } from "react-toastify";
+
 
 const CallBackFormSection = () => {
   const [formData, setFormData] = useState({
@@ -11,20 +13,84 @@ const CallBackFormSection = () => {
     email: '',
     contact: ''
   })
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    contact: ''
+  })
 
-  const handleChange = (e) => {
+    const handleChange = (e) => {
+    const { name, value } = e.target
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
+    })
+    
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: ''
+      })
+    }
+  }
+  const validateName = (name) => {
+    if (!name.trim()) {
+      return 'Name is required'
+    }
+    if (name.trim().length < 2) {
+      return 'Name must be at least 2 characters'
+    }
+    if (!/^[a-zA-Z\s]+$/.test(name)) {
+      return 'Name should only contain letters'
+    }
+    return ''
+  }
+  const validateEmail = (email) => {
+    if (!email.trim()) {
+      return 'Email is required'
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return 'Please enter a valid email address'
+    }
+    return ''
+  }
+  const validateContact = (contact) => {
+    if (!contact.trim()) {
+      return 'Contact number is required'
+    }
+    const phoneRegex = /^[0-9]{10}$/
+    if (!phoneRegex.test(contact.replace(/\s/g, ''))) {
+      return 'Please enter a valid 10-digit contact number'
+    }
+    return ''
+  }
+  const handleSubmit = () => {
+    const nameError = validateName(formData.name)
+    const emailError = validateEmail(formData.email)
+    const contactError = validateContact(formData.contact)
+
+    if (nameError || emailError || contactError) {
+      setErrors({
+        name: nameError,
+        email: emailError,
+        contact: contactError
+      })
+      toast.error("Please fill all fields correctly before submitting.");
+      return
+    }
+
+    console.log('Form submitted:', formData)
+    toast.success("Callback request submitted!")
+    setFormData({
+      name: '',
+      email: '',
+      contact: ''
     })
   }
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData)
-  }
-
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
+    <div className="max-w-7xl mx-auto px-4 md:pl-20 py-6">
       <div className="grid lg:grid-cols-2 gap-8 items-center">
         <div className="relative rounded-3xl p-px">
           <div className="bg-[#FFFFFF0D] backdrop-blur-2xl shadow-md shadow-[#EE3324] rounded-3xl p-8 md:p-12">
@@ -91,7 +157,7 @@ const CallBackFormSection = () => {
 
         {/* Right Side - Images */}
         <div className="relative hidden lg:block h-[430px]">
-                <div className='absolute w-12 h-12 top-42 flex items-center justify-center right-54 rounded-2xl bg-[#FFFFFF0D] backdrop-blur-2xl ring-[0.5px] ring-white/50'>
+                <div className='absolute w-12 h-12 top-42 flex items-center justify-center right-42 2xl:right-44 rounded-2xl bg-[#FFFFFF0D] backdrop-blur-2xl ring-[0.5px] ring-white/50'>
                     <Image src="/decor.png" alt='decor' width={100} height={100} className='w-6 rounded-3xl'/>          
                 </div>  
                 <div className='absolute w-12 h-12 bottom-12 left-32 flex items-center justify-center rounded-2xl bg-[#FFFFFF0D] backdrop-blur-2xl ring-[0.5px] ring-white/50'>

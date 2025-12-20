@@ -1,5 +1,7 @@
 import "./globals.css";
 import { Montserrat, Poppins } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -23,6 +25,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrat.variable} ${poppins.variable} ${montserrat.className}`}
       >
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          theme="dark"
+        />
         {children}
       </body>
     </html>
