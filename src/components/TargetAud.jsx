@@ -42,11 +42,11 @@ const TargetAud = () => {
           </div>            
           </div>
           <Image
-            src="/jogging.png"
+            src="/bhagte_hue_log.png"
             width={2000}
             height={2000}
             alt="target audience"
-            className="rounded-3xl w-full object-cover"
+            className="rounded-3xl w-full md:h-[500px] object-cover"
           />
         </div>
       </div>

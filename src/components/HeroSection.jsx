@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 export default function HeroSection() {
   const router = useRouter();
   return (
-    <div id="home" className="relative min-h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <div id="home" className="relative bg-[url('/homeScreenbg.png')] bg-cover bg-center bg-no-repeat w-full h-full">
+      {/* <div className="absolute">
         <Image 
           src="/homebg.png" 
           alt="homebg" 
@@ -14,10 +14,10 @@ export default function HeroSection() {
           priority
           width={500} height={500}
         />
-      </div>
+      </div> */}
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
-        <h1 className="text-xl md:text-7xl lg:text-4xl xl:text-6xl 2xl:text-[60px] font-semibold text-white lg:leading-[45px] xl:leading-[60px] 2xl:leading-[68px] mb-10">
+        <h1 className="text-2xl w-[300px] md:w-auto sm:text-3xl md:text-7xl lg:text-4xl xl:text-6xl 2xl:text-[60px] font-semibold text-white lg:leading-[45px] xl:leading-[60px] 2xl:leading-[68px] mb-10">
           A New Standard Designed for a<br />
           Longer, Healthier Life.
         </h1>
