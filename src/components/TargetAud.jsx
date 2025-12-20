@@ -18,7 +18,7 @@ const TargetAud = () => {
             & to<span className="text-[#EE3324]"> live Healthy</span>
           </h2>
 
-          <p className="text-gray-300 w-[80vw] md:max-w-md mb-15 lg:mb-10 xl:mb-15">
+          <p className="font-poppins text-gray-300 w-[80vw] md:max-w-md mb-15 lg:mb-10 xl:mb-15">
             People seeking long-term health, not quick fixes. <br />
             Communities investing in wellness infrastructure.
           </p>
@@ -42,7 +42,7 @@ const TargetAud = () => {
           </div>            
           </div>
           <Image
-            src="/pickle.png"
+            src="/jogging.png"
             width={2000}
             height={2000}
             alt="target audience"
@@ -59,10 +59,10 @@ const TargetAud = () => {
           <h3 className="text-white md:text-[#EE3324] font-bold text-xl mb-2 md:mb-6">The Problem</h3>
 
           <ul className="space-y-4 md:pl-6 border-t pt-5 md:pt-0 md:border-l md:border-t-0 border-gray-500 text-white font-medium">
-            <li className="flex items-start justify-start gap-1 md:gap-2"><BadgeCheck size={15} className="mt-1"/><span> Quietly powerful.</span></li>
-            <li className="flex items-start justify-start gap-1 md:gap-2"><BadgeCheck size={15} className="mt-1"/><span> Modern wellness is reactive.</span></li>
-            <li className="flex items-start justify-start gap-1 md:gap-2"><BadgeCheck size={15} className="mt-1"/><span> Most systems treat symptoms, not lifespan.</span></li>
-            <li className="flex items-start justify-start gap-1 md:gap-2"><BadgeCheck size={15} className="mt-1"/><span> We focus on preventive, measurable, sustainable living.</span></li>
+            <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> Quietly powerful.</span></li>
+            <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> Modern wellness is reactive.</span></li>
+            <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> Most systems treat symptoms, not lifespan.</span></li>
+            <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> We focus on preventive, measurable, sustainable living.</span></li>
           </ul>
         </div>
 
@@ -71,10 +71,10 @@ const TargetAud = () => {
           <h3 className="text-white md:text-[#EE3324] font-bold text-xl mb-2 md:mb-6">Our Solution</h3>
 
           <ul className="space-y-4 md:pl-6 border-t pt-5 md:pt-0 md:border-l md:border-t-0 border-gray-500 text-white font-medium">
-            <li className="flex items-start justify-start gap-1 md:gap-2"><BadgeCheck size={15} className="mt-1"/><span> An integrated ecosystem</span></li>
-            <li className="flex items-start justify-start gap-1 md:gap-2"><BadgeCheck size={15} className="mt-1"/><span> Digital intelligence (App)</span></li>
-            <li className="flex items-start justify-start gap-1 md:gap-2"><BadgeCheck size={15} className="mt-1"/><span> Physical execution (Studios)</span></li>
-            <li className="flex items-start justify-start gap-1 md:gap-2"><BadgeCheck size={15} className="mt-1"/><span> Human expertise (Coaches & Specialists)</span></li>
+            <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> An integrated ecosystem</span></li>
+            <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> Digital intelligence (App)</span></li>
+            <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> Physical execution (Studios)</span></li>
+            <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> Human expertise (Coaches & Specialists)</span></li>
           </ul>
         </div>
       </div>

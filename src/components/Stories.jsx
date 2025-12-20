@@ -70,7 +70,7 @@ const Stories = () => {
             About Their Fitterify <br />
             Experience
           </h2>
-          <p className="text-[#FFFFFFC2] text-base max-w-md mb-10">
+          <p className="text-[#FFFFFFC2] text-base max-w-md mb-10 font-poppins">
             From first-timers to experienced athletes — our members share how
             Fitterify changed their journey.
           </p>
@@ -78,7 +78,7 @@ const Stories = () => {
 
         {/* RIGHT CONTENT */}
         <div className="max-w-lg text-white pt-4 md:pt-14">
-          <p className="text-lg w-full text-[#FFFFFFC2] md:w-sm leading-relaxed mb-8 min-h-[140px]">
+          <p className="text-lg w-full font-poppins text-[#FFFFFFC2] md:w-sm leading-relaxed mb-8 min-h-[140px]">
             {currentStory.testimonial}
           </p>
           <div className="flex items-center gap-4">

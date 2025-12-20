@@ -18,7 +18,7 @@ export default function WeDo() {
           Grow <span className="text-[#EE3324]">Stronger.</span>
         </h1>
 
-        <p className="text-gray-300 mt-1 font-literata max-w-xl mx-auto leading-relaxed">
+        <p className="font-poppins text-gray-300 mt-1 font-literata max-w-xl mx-auto leading-relaxed">
           Whether you&apos;re just starting out or chasing peak performance, our
           expert-led programs are built to push your limits.
         </p>
@@ -51,7 +51,7 @@ export default function WeDo() {
               <Image onClick={()=>router.push("https://play.google.com/store/apps/details?id=com.wellnessz.fitterifyapp")} src="/playstore.png" alt="playstore" width={100} height={40} className="cursor-pointer w-18 md:w-20"/>
             </div>
         </div>
-        <p className="text-white text-center md:text-left mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">
+        <p className={`font-poppins text-white text-center md:text-left mt-2 md:mt-12 max-w-sm font-literata leading-relaxed`}>
               Data-driven insights for daily health, recovery, and performance.
         </p>
       </div>
@@ -75,14 +75,14 @@ export default function WeDo() {
             </h2>
           </div>
           </div>
-          <div className="flex-col items-center justify-center gap-4">
+          <div className="flex-col items-center justify-center gap-4 md:ml-6.5">
             <Image src="/longevity.png" alt="longevity" width={100} height={100} className="w-24 mb-2 rounded-2xl mx-auto" />
             <div className="flex items-center justify-center gap-2">
               <Image onClick={()=>router.push("https://apps.apple.com/us/app/fitterify/id6756501595")} src="/appStore.png" alt="appstore" width={100} height={40} className="cursor-pointer w-18 md:w-20"/>
               <Image onClick={()=>router.push("https://play.google.com/store/apps/details?id=com.wellnessz.fitterifyapp")} src="/playstore.png" alt="playstore" width={100} height={40} className="cursor-pointer w-18 md:w-20"/>
             </div>
           </div>
-         <p className="text-white text-center md:text-left mt-2 md:mt-12 max-w-sm font-literata leading-relaxed">
+         <p className={`font-poppins text-white text-center md:text-left mt-2 md:mt-12 max-w-sm font-literata leading-relaxed`}>
              Programs designed for long-term vitality, not short-term results.
         </p>
         </div>
@@ -106,8 +106,8 @@ export default function WeDo() {
             </h2>
           </div>
         </div>
-        <p className="text-white text-xl font-semibold text-center md:text-left mt-6 md:mt-12 max-w-sm font-literata leading-relaxed animate-pulse">Coming Soon...</p> 
-        <p className="text-white text-center md:text-left mt-6 md:mt-12 max-w-sm font-literata leading-relaxed">
+        <Image src="/coming.png" alt="coming_soon" width={100} height={100} className="w-30 md:mr-4"/> 
+        <p className={`font-poppins text-white text-center md:text-left mt-6 md:mt-12 max-w-sm font-literata leading-relaxed`}>
               Physical spaces where wellness becomes a lived experience.
         </p>
       </div>

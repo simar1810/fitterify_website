@@ -2,15 +2,23 @@
 import Image from "next/image";
 import React from "react";
 import { PhoneCall, Mail } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-const Footer = () => {
+const Footer = ({landing=true}) => {
+  const router = useRouter();
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+ const operate = (id) => {
+    if (landing) {
+      scrollToSection(id);
+    } else {
+      router.push(`/#${id}`);
+   } 
+  };
   const handleWhatsApp = () => {
     const phoneNumber = "919449631244";
     const message = "Hi! I'm interested in learning more about Fitterify.";
@@ -45,22 +53,22 @@ const Footer = () => {
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-6 md:gap-12 mb-12">
               <div className="lg:col-span-1">
                 <div 
-                  onClick={() => scrollToSection("home")} 
+                  onClick={() => operate("home")} 
                   className="cursor-pointer mb-6"
                 >
                   <Image src="/logo.png" alt="Footer Logo" width={500} height={500} className="w-15 h-15"/>
                 </div>
-                <p className="text-gray-100 text-sm mb-4">
+                <p className="text-gray-100 text-sm mb-4 font-poppins">
                   Train with Purpose. <br /> Transform with Power.
                 </p>
                 <div className="space-y-2 text-sm text-gray-300">
-                  <p className="flex items-start md:items-center gap-2">
+                  <p className="flex items-start md:items-center gap-2 font-poppins">
                     <PhoneCall size={15} />
                     <span>+91 94496 31244</span>
                   </p>
-                  <p className="flex items-start gap-2">
+                  <p className="flex items-start gap-2 font-poppins">
                     <Mail size={20}/>
-                    <span className="break-all text-xs md:text-sm">vijaykumarrohan1@gmail.com</span>
+                    <span className="break-all text-xs md:text-sm">contact@fitterify.com</span>
                   </p>
                 </div>
               </div>
@@ -68,27 +76,28 @@ const Footer = () => {
               <div>
                 <h4 className="font-semibold mb-4 text-white">Company</h4>
                 <ul className="space-y-3 text-sm text-gray-300">
-                  <li onClick={() => scrollToSection("about")} className="hover:text-white cursor-pointer transition-colors">About Us</li>
-                  <li onClick={() => scrollToSection("home")} className="hover:text-white cursor-pointer transition-colors">Home</li>
-                  <li onClick={() => scrollToSection("contact")} className="hover:text-white cursor-pointer transition-colors">Contact Us</li>
+                  <li onClick={() => operate("about")} className="hover:text-white cursor-pointer transition-colors font-poppins">About Us</li>
+                  <li onClick={() => operate("home")} className="hover:text-white cursor-pointer transition-colors font-poppins">Home</li>
+                  <li onClick={() => operate("contact")} className="hover:text-white cursor-pointer transition-colors font-poppins">Contact Us</li>
+                  <li onClick={() => router.push("/become-a-coach")} className="hover:text-white cursor-pointer transition-colors font-poppins">Become a Coach</li>
                 </ul>
               </div>
               
               <div>
                 <h4 className="font-semibold mb-4 text-white">Offerings</h4>
                 <ul className="space-y-3 text-sm text-gray-300">
-                  <li className="hover:text-white cursor-pointer transition-colors">Coaching</li>
-                  <li className="hover:text-white cursor-pointer transition-colors">Programs</li>
-                  <li className="hover:text-white cursor-pointer transition-colors">Corporate Wellness</li>
+                  <li className="hover:text-white cursor-pointer transition-colors font-poppins">Coaching</li>
+                  <li onClick={()=> router.push("/programs")} className="font-poppins hover:text-white cursor-pointer transition-colors">Programs</li>
+                  <li className="hover:text-white cursor-pointer transition-colors font-poppins">Corporate Wellness</li>
                 </ul>
               </div>
               
               <div>
                 <h4 className="font-semibold mb-4 text-white">Resources</h4>
                 <ul className="space-y-3 text-sm text-gray-300">
-                  <li onClick={() => scrollToSection("trainer")} className="hover:text-white cursor-pointer transition-colors">Trainers</li>
-                  <li className="hover:text-white cursor-pointer transition-colors">Success Stories</li>
-                  <li className="hover:text-white cursor-pointer">Pricing</li>
+                  <li onClick={() => operate("trainer")} className="hover:text-white cursor-pointer transition-colors font-poppins">Trainers</li>
+                  <li onClick={()=> router.push("/success-stories")} className="hover:text-white cursor-pointer transition-colors font-poppins">Success Stories</li>
+                  <li className="hover:text-white cursor-pointer font-poppins">Pricing</li>
                 </ul>
               </div>
               
@@ -96,7 +105,7 @@ const Footer = () => {
                 <h4 className="font-semibold mb-4 text-white flex items-center gap-2">
                   ⏳ Our Timings
                 </h4>
-                <div className="space-y-3 text-sm text-gray-300">
+                <div className="space-y-3 text-sm text-gray-300 font-poppins">
                   <div>
                     <p className="font-medium text-white">Mon–Sat:</p>
                     <p>6:00 AM – 10:00 PM</p>
@@ -113,10 +122,24 @@ const Footer = () => {
               <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div className="text-sm text-gray-300 text-center md:text-left">
                   <p>© 2025 Fitterify Health Solutions Private Limited. All rights reserved.</p>
-                  <p className="text-xs mt-1">powered by WellnessZ</p>
+                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-1 md:gap-2">
+                    <p className="text-xs mt-1 font-poppins">powered by WellnessZ</p>
+                    <div className="bg-gray-300 p-0.5 rounded-full mt-1"></div>
+                    <p className="text-xs mt-1 font-poppins">Made in India with ♥️</p>
+                  </div>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+                  <div className="flex justify-start items-center text-sm gap-2 mr-2 text-gray-300">
+                    <p>Download Now</p>
+                    <div onClick={()=>router.push("https://play.google.com/store/apps/details?id=com.wellnessz.fitterifyapp")} className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                      <Image src="/playstore-logo.png" alt="playstore" width={100} height={100} className="w-5" />
+                    </div>
+                    <div onClick={()=>router.push("https://apps.apple.com/us/app/fitterify/id6756501595")} className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                      <Image src="/apple.png" alt="playstore" width={100} height={100} className="w-5" />
+                    </div>  
+                  </div>
+                  <div className="flex gap-3">
                   <button 
                     onClick={() => handleNavigation("https://www.instagram.com/fitterify?igsh=ZjV5bndodWxidGRp")}
                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
@@ -143,7 +166,8 @@ const Footer = () => {
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>
-                  </button>
+                    </button>
+                   </div> 
                 </div>
               </div>
             </div>
