@@ -33,43 +33,43 @@ const Page = () => {
       name: "Aarav Mehta",
       role: "Startup Founder, Bengaluru",
       quote: "In the last 14 months, my life has changed completely. I feel stronger, healthier, and more confident than ever. This journey didn’t just transform my body—it transformed my mindset.",
-      image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=600&fit=crop"
+      image: "/ss6.jpg"
     },
     {
       name: "Riya Nambiar",
       role: "Marketing Professional, Mumbai",
       quote: "8 months ago, I was exhausted, stressed, and disconnected from myself. Today, I feel alive, balanced, and in control of my health. This journey gave me my best version back.",
-      image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=600&fit=crop"
+      image: "/ss2.jpg"
     },
     {
       name: "Sanjay Patel",
       role: "Entrepreneur, Ahmedabad",
       quote: "These 3 months taught me what true self-care feels like. I didn’t just lose weight, I gained energy, discipline, and a sense of purpose. I feel like I’ve got a new life.",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=600&fit=crop"
+      image: "/ss3.png"
     },
     {
       name: "Ananya Iyer",
       role: "IT Professional, Chennai",
       quote: "In just 45 days, my health, confidence, and happiness have taken a beautiful turn. I never believed I could feel this strong—physically, mentally, and emotionally.",
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop"
+      image: "/ss4.png"
     },
     {
       name: "Meera Kapoor",
       role: "Teacher, Pune",
       quote: "In the last one year, I dreamt of a healthier me. Today, I am living that dream. I feel lighter, happier, and truly proud of how far I’ve come.",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop"
+      image: "/ss5.jpg"
     },
     {
       name: "Kabir Singh",
       role: "Fitness Coach, Delhi",
       quote: "Even as a fitness professional, I needed guidance—and these 5 months changed everything. I pushed limits, healed from within, and discovered what my body is truly capable of.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop"
+      image: "/ss1.jpg"
     },
     {
       name: "Rohit Verma",
       role: "Photographer & Artist, Kolkata",
       quote: "In the few months, I didn’t just build a healthier body—I built a healthier life. My energy, focus, and passion have all come back stronger than ever.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop"
+      image: "/ss7.png"
     }
   ];
 

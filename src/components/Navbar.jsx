@@ -113,7 +113,7 @@ export default function Navbar({landing=true}) {
             </div>
         </div>
         {/* Mobile Navbar */}
-        <div className="px-4 py-3 rounded-full w-full bg-[#3b3b3b] flex md:hidden items-center justify-between">
+        <div className="px-4 py-3 rounded-full w-full bg-[#FFFFFF0D] backdrop-blur-sm flex md:hidden items-center justify-between">
           <Image
             src="/fitterify.png"
             alt="logo"

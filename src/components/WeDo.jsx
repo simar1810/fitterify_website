@@ -106,7 +106,7 @@ export default function WeDo() {
             </h2>
           </div>
         </div>
-        <Image src="/coming.png" alt="coming_soon" width={100} height={100} className="w-30 md:mr-4"/> 
+        <Image src="/comingSoon.png" alt="coming_soon" width={100} height={100} className="w-30 md:mr-4"/> 
         <p className={`font-poppins text-white text-center md:text-left mt-6 md:mt-12 max-w-sm font-literata leading-relaxed`}>
               Physical spaces where wellness becomes a lived experience.
         </p>
