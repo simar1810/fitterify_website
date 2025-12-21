@@ -51,7 +51,7 @@ const AboutSection = () => {
     <div id="about" className="w-full bg-[#050505] py-24 px-6 xl:px-20 2xl:px-6 flex justify-center">
       <div className="max-w-[1300px] w-full grid grid-cols-1 md:grid-cols-3 gap-20 items-center">
         <div>
-          <p className="text-lg font-semibold text-[#EE3324] bg-[#1a1a1a] w-fit px-3 py-3 rounded-full">
+          <p className="text-base font-extrabold uppercase text-white bg-[#1a1a1a] w-fit px-3 py-3 rounded-full">
             About Fitterify
           </p>
 
@@ -69,7 +69,7 @@ const AboutSection = () => {
             <Image src="/barbell_white.png" alt="icon" width={24} height={24} />
           </div>
 
-          <p className="text-[#FFFFFF] text-base w-20 md:w-auto md:text-xl font-semibold">
+          <p className="text-[#FFFFFF] font-poppins text-base w-20 md:w-auto md:text-xl font-semibold">
             Trusted by Over <br />
             <CountUp end={1000} /> Members
           </p>

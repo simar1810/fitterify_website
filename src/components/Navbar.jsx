@@ -48,7 +48,7 @@ export default function Navbar({landing=true}) {
   }, []);
 
   const tabClasses = (id) =>
-    `text-sm cursor-pointer px-4 py-1 rounded-full transition hover:bg-[#EE3324] hover:text-white 
+    `text-xs xl:text-sm font-extrabold cursor-pointer px-4 py-1 rounded-full transition hover:bg-[#EE3324] hover:text-white 
   ${
       activeSection === id && landing
         ? "bg-[#EE3324] text-white"
@@ -64,14 +64,14 @@ export default function Navbar({landing=true}) {
 
       {isBecomeCoach ? 
         <Image
-          src="/logo.png"
+          src="/fitterify.png"
           alt="logo"
           width={1000}
           height={1000}
           className="w-16 lg:w-14 xl:w-18 2xl:w-20 hidden md:block"
           /> :
         <Image
-          src="/fitterify-logo.png"
+          src="/fitterify.png"
           alt="logo"
           width={1000}
           height={1000}
@@ -80,7 +80,7 @@ export default function Navbar({landing=true}) {
       }
         {/* Desktop Nav */}
         <div className="flex gap-3">
-        <div className="px-10 xl:px-20 2xl:px-30 py-3 xl:py-4 rounded-full hidden md:flex items-center xl:gap-3 shadow-[0_0_40px_rgba(0,0,0,0.8)] bg-[#FFFFFF0D] backdrop-blur-2xl ring-1 ring-white/10">
+        <div className="px-10 xl:px-10 2xl:px-30 py-3 xl:py-4 rounded-full hidden md:flex items-center xl:gap-3 shadow-[0_0_40px_rgba(0,0,0,0.8)] bg-[#FFFFFF0D] backdrop-blur-2xl ring-1 ring-white/10 uppercase">
           <span className={tabClasses("home")} onClick={() => operate("home")}>
             <p>Home</p>
           </span>
@@ -98,10 +98,10 @@ export default function Navbar({landing=true}) {
           </span>
           </div>
           <div className="relative flex">
-        <div onClick={() => router.push("/app")} className="bg-[#FFFFFF0D] backdrop-blur-2xl px-8 py-2 text-white text-sm rounded-full hidden md:flex items-center gap-6 shadow-[0_0_40px_rgba(0,0,0,0.8)] hover:bg-[#EE3324] hover:cursor-pointer ring-1 ring-[#EE3324]">
+        <div onClick={() => router.push("/app")} className="bg-[#FFFFFF0D] backdrop-blur-2xl px-8 py-2 text-white text-xs xl:text-sm font-extrabold rounded-full hidden md:flex items-center gap-6 shadow-[0_0_40px_rgba(0,0,0,0.8)] hover:bg-[#EE3324] hover:cursor-pointer ring-1 ring-[#EE332480] uppercase">
           Get App
         </div>
-        <div className="absolute hidden lg:flex top-1 right-[-15px] w-10 h-10 rounded-full bg-[#EE3324] items-center justify-center">
+        <div className="absolute hidden lg:flex top-1 right-[-15px] w-10 h-10 rounded-full bg-[#EE332480] backdrop-blur-2xl items-center justify-center">
           <Image
             src="/home-cta.png"
             alt="cta"
@@ -113,16 +113,14 @@ export default function Navbar({landing=true}) {
             </div>
         </div>
         {/* Mobile Navbar */}
-        <div className="px-4 py-3 rounded-full w-full bg-[#3b3b3b] flex md:hidden items-center justify-between">
-          <div className="bg-white w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
+        <div className="px-4 py-3 rounded-full w-full bg-[#FFFFFF0D] backdrop-blur-sm flex md:hidden items-center justify-between">
           <Image
-            src="/footer-logo.png"
+            src="/fitterify.png"
             alt="logo"
             width={1000}
             height={1000}
-            className="w-6 rounded-full"
+            className="w-8"
             />
-            </div>
           <div
             onClick={() => setMenuOpen(true)}
             className="w-8 h-8 rounded-full bg-white flex items-center justify-center"
@@ -142,7 +140,7 @@ export default function Navbar({landing=true}) {
               <X size={20} />
             </button>
 
-            <div className="flex flex-col gap-6 mt-6">
+            <div className="flex flex-col gap-6 mt-6 uppercase">
               <span
                 className={tabClasses("home")}
                 onClick={() => operate("home")}
@@ -176,7 +174,7 @@ export default function Navbar({landing=true}) {
                 Contact Us
               </span>
               <span
-                className="text-[#EE3324]"
+                className="text-[#EE3324] font-extrabold"
                 onClick={() => router.push("/app")}
               >
                 Get App

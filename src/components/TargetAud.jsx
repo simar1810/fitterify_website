@@ -9,11 +9,11 @@ const TargetAud = () => {
 
         {/* LEFT SIDE CONTENT */}
         <div className="w-[90vw] md:w-auto">
-          <div className="inline-flex items-center px-4 py-4 rounded-full bg-[#2A2A2A] text-[#EE3324] text-sm mb-6">
+          <div className="inline-flex items-center px-4 py-4 rounded-full bg-[#2A2A2A] text-sm mb-6 uppercase font-extrabold text-white">
             Who This Is For
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-extrabold leading-tight mb-4">
             <span className="text-white">For Everybody who Wants</span><br />
             & to<span className="text-[#EE3324]"> live Healthy</span>
           </h2>
@@ -56,7 +56,7 @@ const TargetAud = () => {
 
         {/* PROBLEM CARD */}
         <div className="bg-[#1A1A1A] flex flex-col md:flex-row items-start md:items-center justify-between rounded-2xl py-8 px-4">
-          <h3 className="text-white md:text-[#EE3324] font-bold text-xl mb-2 md:mb-6">The Problem</h3>
+          <h3 className="text-white md:text-[#EE3324] font-extrabold text-xl mb-2 uppercase md:mb-6">The Problem</h3>
 
           <ul className="space-y-4 md:pl-6 border-t pt-5 md:pt-0 md:border-l md:border-t-0 border-gray-500 text-white font-medium">
             <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> Quietly powerful.</span></li>
@@ -68,7 +68,7 @@ const TargetAud = () => {
 
         {/* SOLUTION CARD */}
         <div className="bg-[#1A1A1A] flex flex-col md:flex-row items-start md:items-center gap-4 justify-between rounded-2xl py-8 px-4">
-          <h3 className="text-white md:text-[#EE3324] font-bold text-xl mb-2 md:mb-6">Our Solution</h3>
+          <h3 className="text-white md:text-[#EE3324] uppercase font-extrabold text-xl mb-2 md:mb-6">Our <br />Solution</h3>
 
           <ul className="space-y-4 md:pl-6 border-t pt-5 md:pt-0 md:border-l md:border-t-0 border-gray-500 text-white font-medium">
             <li className="flex items-start justify-start gap-1 md:gap-2 font-poppins"><BadgeCheck size={15} className="mt-1"/><span> An integrated ecosystem</span></li>

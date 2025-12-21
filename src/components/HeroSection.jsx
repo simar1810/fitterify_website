@@ -16,13 +16,16 @@ export default function HeroSection() {
         />
       </div> */}
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
-        <h1 className="text-2xl w-[300px] md:w-auto sm:text-3xl md:text-7xl lg:text-4xl xl:text-6xl 2xl:text-[60px] font-semibold text-white lg:leading-[45px] xl:leading-[60px] 2xl:leading-[68px] mb-10">
+      <div className="relative z-10 flex flex-col items-center pt-[20vh] sm:pt-45 md:pt-0 justify-start md:justify-center min-h-screen px-6 text-center">
+        <h1 className="text-3xl w-[300px] md:w-auto sm:text-3xl md:text-7xl lg:text-4xl xl:text-6xl 2xl:text-[60px] font-extrabold text-white lg:leading-[45px] xl:leading-[60px] 2xl:leading-[68px] mb-6 md:mb-10" style={{
+                WebkitTextStroke: '0.5px #EE3324',
+                textStroke: '0.5px #EE3324'
+              }}>
           A New Standard Designed for a<br />
           Longer, Healthier Life.
         </h1>
         
-        <p className="text-gray-200 text-base md:text-xl lg:text-base max-w-3xl xl:max-w-5xl mb-10">
+        <p className="text-[#EDEDED] font-poppins font-semibold text-base md:text-xl lg:text-base xl:text-xl max-w-3xl xl:max-w-5xl mb-10">
           Science-backed, personalized fitness that combines training, recovery, nutrition, and performance—into one intelligent experience.
         </p>
 

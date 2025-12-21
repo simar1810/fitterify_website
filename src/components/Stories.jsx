@@ -62,10 +62,10 @@ const Stories = () => {
 
         {/* LEFT CONTENT */}
         <div className="max-w-xl">
-          <span className="inline-block bg-white/20 text-white text-sm px-4 py-3 rounded-full mb-6">
+          <span className="inline-block bg-white/20 text-white font-extrabold uppercase text-sm px-4 py-3 rounded-full mb-6">
             Member Stories
           </span>
-          <h2 className="text-white text-2xl md:text-4xl font-bold leading-snug mb-6">
+          <h2 className="text-white text-2xl md:text-4xl font-extrabold leading-snug mb-6">
             What Our Members Say <br />
             About Their Fitterify <br />
             Experience

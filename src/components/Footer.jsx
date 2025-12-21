@@ -50,13 +50,27 @@ const Footer = ({landing=true}) => {
           <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-400/4 rounded-full blur-[100px] pointer-events-none"></div>
           
           <div className="relative z-10">
+
+            <div className="flex flex-wrap gap-5 md:gap-0 items-center justify-between mb-8">
+              <p className="text-3xl leading-10 md:text-[40px] md:leading-[50px] xl:text-[55px] xl:leading-[70px] font-semibold">To redefine how the world <br /> experiences health — from <br /> <span className="text-[#EE3324]">short-term fitness</span> to <span className="text-[#EE3324]">lifelong<br /> wellness.</span>
+              </p>
+          <div className="w-20 h-20 md:w-28 md:h-28 lg:w-22 lg:h-22 xl:w-28 xl:h-28 bg-[#EE3324] rounded-full flex items-center justify-center">
+          <div className="w-15 h-15 md:w-21 md:h-21 lg:w-16 lg:h-16 xl:w-21 xl:h-21 bg-transparent rounded-full flex items-center justify-center ring-2 ring-white">     
+            <div className="w-10 h-10 rounded-full md:w-15 md:h-15 lg:w-8 lg:h-8 xl:w-15 xl:h-15 bg-white flex items-center justify-center">
+                <Image src="/footer-logo.png" alt="footer-logo" width={500} height={500} className="w-5 md:w-10 lg:w-5 xl:w-10"/>
+            </div>
+          </div>            
+          </div>
+            </div>
+
+            <div className="w-full border border-white/10 mb-8"></div>
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-6 md:gap-12 mb-12">
               <div className="lg:col-span-1">
                 <div 
                   onClick={() => operate("home")} 
                   className="cursor-pointer mb-6"
                 >
-                  <Image src="/logo.png" alt="Footer Logo" width={500} height={500} className="w-15 h-15"/>
+                  <Image src="/fitterify.png" alt="Footer Logo" width={500} height={500} className="w-15 h-15"/>
                 </div>
                 <p className="text-gray-100 text-sm mb-4 font-poppins">
                   Train with Purpose. <br /> Transform with Power.
@@ -74,7 +88,7 @@ const Footer = ({landing=true}) => {
               </div>
               
               <div>
-                <h4 className="font-semibold mb-4 text-white">Company</h4>
+                <h4 className="font-extrabold uppercase mb-4 text-white">Company</h4>
                 <ul className="space-y-3 text-sm text-gray-300">
                   <li onClick={() => operate("about")} className="hover:text-white cursor-pointer transition-colors font-poppins">About Us</li>
                   <li onClick={() => operate("home")} className="hover:text-white cursor-pointer transition-colors font-poppins">Home</li>
@@ -84,7 +98,7 @@ const Footer = ({landing=true}) => {
               </div>
               
               <div>
-                <h4 className="font-semibold mb-4 text-white">Offerings</h4>
+                <h4 className="font-extrabold uppercase mb-4 text-white">Offerings</h4>
                 <ul className="space-y-3 text-sm text-gray-300">
                   <li className="hover:text-white cursor-pointer transition-colors font-poppins">Coaching</li>
                   <li onClick={()=> router.push("/programs")} className="font-poppins hover:text-white cursor-pointer transition-colors">Programs</li>
@@ -93,7 +107,7 @@ const Footer = ({landing=true}) => {
               </div>
               
               <div>
-                <h4 className="font-semibold mb-4 text-white">Resources</h4>
+                <h4 className="font-extrabold uppercase mb-4 text-white">Resources</h4>
                 <ul className="space-y-3 text-sm text-gray-300">
                   <li onClick={() => operate("trainer")} className="hover:text-white cursor-pointer transition-colors font-poppins">Trainers</li>
                   <li onClick={()=> router.push("/success-stories")} className="hover:text-white cursor-pointer transition-colors font-poppins">Success Stories</li>
@@ -102,8 +116,8 @@ const Footer = ({landing=true}) => {
               </div>
               
               <div>
-                <h4 className="font-semibold mb-4 text-white flex items-center gap-2">
-                  ⏳ Our Timings
+                <h4 className="font-extrabold uppercase mb-4 text-white flex items-center gap-2">
+                  Our Timings
                 </h4>
                 <div className="space-y-3 text-sm text-gray-300 font-poppins">
                   <div>
