@@ -1,4 +1,5 @@
 "use client"
+import ContactForm from '@/components/ContactUs';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { fetchData } from '@/lib/api';
@@ -224,6 +225,7 @@ const Page = () => {
     }
 
   ];
+  const [contactFormOpen, setContactFormOpen] = useState(false);
 
   return (
       <div id='program' className="bg-[#050504] min-h-screen">
@@ -248,8 +250,12 @@ const Page = () => {
           <ProgramCard key={index} program={program} index={index} />
         ))}
         </div>
-      <p className='text-base md:text-lg font-poppins text-gray-300 text-center font-semibold mt-10'>Still confused about choosing a plan ? Speak to our expert and let us walk you through your wellness journey</p>
-    </div>
+        <p className='text-base md:text-lg font-poppins text-gray-300 text-center font-semibold mt-10'>Still confused about choosing a plan ? Speak to our expert and let us walk you through your wellness journey</p>
+      <div className='w-full flex items-center justify-center mt-4'>
+        <button onClick={()=>setContactFormOpen(true)} className='cursor-pointer px-4 py-2 ring-1 ring-[#EE3324] bg-[#1a1a1a] rounded-2xl  text-[#EE3324] font-semibold'>Contact Us</button>
+      </div>
+      </div>
+      <ContactForm isOpen={contactFormOpen} onClose={()=>setContactFormOpen(false)}/>
       <Footer landing={false} />
       </div>
   );
