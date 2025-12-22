@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function HeroSection() {
   const router = useRouter();
   return (
-    <div id="home" className="relative bg-[url('/homeScreenbg.png')] bg-cover bg-center bg-no-repeat w-full h-full">
+    <div id="home" className="relative bg-[url('/home.jpg')] bg-cover bg-center bg-no-repeat w-full h-full">
       {/* <div className="absolute">
         <Image 
           src="/homebg.png" 
