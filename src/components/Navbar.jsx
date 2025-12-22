@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import ContactForm from "./ContactUs";
 
 export default function Navbar({landing=true}) {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [contactFormOpen, setContactFormOpen] = useState(false);
   const router = useRouter()
   const pathname = usePathname();
   const isBecomeCoach = pathname === "/become-a-coach";
@@ -62,22 +64,15 @@ export default function Navbar({landing=true}) {
         <div className="w-44 h-44 bg-[radial-gradient(circle,rgba(238,51,36,0.55),rgba(238,51,36,0.15),transparent_70%)] blur-2xl rounded-full"></div>
       </div> */}
 
-      {isBecomeCoach ? 
         <Image
+          onClick={()=>operate("home")}
           src="/fitterify.png"
           alt="logo"
           width={1000}
           height={1000}
-          className="w-16 lg:w-14 xl:w-18 2xl:w-20 hidden md:block"
-          /> :
-        <Image
-          src="/fitterify.png"
-          alt="logo"
-          width={1000}
-          height={1000}
-          className="w-16 lg:w-14 xl:w-16 hidden md:block"
+          className="w-16 lg:w-14 xl:w-16 hidden md:block cursor-pointer"
         />
-      }
+
         {/* Desktop Nav */}
         <div className="flex gap-3">
         <div className="px-10 xl:px-10 2xl:px-30 py-3 xl:py-4 rounded-full hidden md:flex items-center xl:gap-3 shadow-[0_0_40px_rgba(0,0,0,0.8)] bg-[#FFFFFF0D] backdrop-blur-2xl ring-1 ring-white/10 uppercase">
@@ -93,7 +88,7 @@ export default function Navbar({landing=true}) {
           <span className={tabClasses("contact")} onClick={() => operate("contact")}>
             Corporate Wellness
           </span>
-          <span className={tabClasses("contact")} onClick={() => operate("contact")}>
+          <span className={tabClasses("contact")} onClick={() => setContactFormOpen(!contactFormOpen)}>
             Contact Us
           </span>
           </div>
@@ -169,7 +164,7 @@ export default function Navbar({landing=true}) {
               </span>
               <span
                 className={tabClasses("contact")}
-                onClick={() => operate("contact")}
+                onClick={() => setContactFormOpen(!contactFormOpen)}
               >
                 Contact Us
               </span>
@@ -183,6 +178,7 @@ export default function Navbar({landing=true}) {
           </div>
         </div>
       )}
+      <ContactForm isOpen={contactFormOpen} onClose={()=>setContactFormOpen(false)}/>
     </>
   );
 }

@@ -25,7 +25,7 @@ export default function HeroSection() {
           Longer, Healthier Life.
         </h1>
         
-        <p className="text-[#EDEDED] font-poppins font-semibold text-base md:text-xl lg:text-base xl:text-xl max-w-3xl xl:max-w-5xl mb-10">
+        <p className="text-[#EDEDED] font-poppins font-semibold text-lg md:text-xl lg:text-base xl:text-xl max-w-3xl xl:max-w-5xl mb-10">
           Science-backed, personalized fitness that combines training, recovery, nutrition, and performance—into one intelligent experience.
         </p>
 

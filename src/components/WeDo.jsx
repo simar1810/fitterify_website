@@ -27,7 +27,7 @@ export default function WeDo() {
         {/* card1 */}
       <div className="md:sticky md:top-32 md:z-10 bg-[#1a1a19] transition-transform duration-500 backdrop-blur-sm">
       <div className="flex flex-col space-y-10 md:space-y-0 md:flex-row items-center justify-between py-6 px-4 md:px-28">
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="w-14 h-14 rounded-full bg-[#717171] flex items-center justify-center">
             <Image
               src="/wedo1.png"
@@ -39,7 +39,7 @@ export default function WeDo() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-extrabold text-[#EE3324]">
+            <h2 className="text-2xl text-center md:text-left font-extrabold text-[#EE3324]">
               Wellness App
             </h2>
           </div>
@@ -59,7 +59,7 @@ export default function WeDo() {
         {/* card2 */}
       <div className="md:sticky md:top-32 md:z-20 md:-mt-24 bg-[#EE3324] transition-transform duration-500">
       <div className="flex flex-col space-y-10 md:space-y-0 md:flex-row items-center justify-between py-6 px-4 md:px-28 bg-[#EE3324]">
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center">
             <Image
               src="/Group2.png"
@@ -70,7 +70,7 @@ export default function WeDo() {
             />
           </div>
           <div>
-            <h2 className="text-2xl font-extrabold text-white">
+            <h2 className="text-2xl text-center md:text-left font-extrabold text-white">
               Longevity <br /> Framework
             </h2>
           </div>
@@ -90,7 +90,7 @@ export default function WeDo() {
         {/* card3 */}
       <div className="md:sticky md:top-32 md:z-30 md:-mt-24 bg-[#1a1a19] transition-transform duration-500">
       <div className="flex flex-col space-y-10 md:space-y-0 md:flex-row items-center justify-between px-4 md:px-28 border-b border-gray-600 pt-10  pb-10 md:pb-40 md:pt-20">
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="w-14 h-14 rounded-full bg-[#717171] flex items-center justify-center">
             <Image
               src="/wedo3.png"
@@ -101,7 +101,7 @@ export default function WeDo() {
             />
           </div>
           <div>
-            <h2 className="text-2xl font-extrabold text-[#EE3324]">
+            <h2 className="text-2xl text-center md:text-left font-extrabold text-[#EE3324]">
               Transformation <br /> Studios
             </h2>
           </div>

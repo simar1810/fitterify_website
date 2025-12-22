@@ -102,6 +102,7 @@ const Page = () => {
               />
             ))}
           </div>
+          <p className='text-base md:text-2xl font-poppins font-bold text-gray-300 text-center mt-10'><span className='text-[#EE3324]'>1000 +</span> plus clients transformed</p>
         </div>
       </div>
       <Footer landing={false} />

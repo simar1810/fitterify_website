@@ -1,10 +1,12 @@
 "use client"
 import Image from "next/image";
-import React from "react";
+import React, {useState} from "react";
 import { PhoneCall, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
+import ContactForm from "./ContactUs";
 
-const Footer = ({landing=true}) => {
+const Footer = ({ landing = true }) => {
+  const [contactFormOpen, setContactFormOpen] = useState(false);
   const router = useRouter();
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -78,7 +80,7 @@ const Footer = ({landing=true}) => {
                 <div className="space-y-2 text-sm text-gray-300">
                   <p className="flex items-start md:items-center gap-2 font-poppins">
                     <PhoneCall size={15} />
-                    <span>+91 94496 31244</span>
+                    <span>+91 81233 98639</span>
                   </p>
                   <p className="flex items-start gap-2 font-poppins">
                     <Mail size={20}/>
@@ -92,7 +94,7 @@ const Footer = ({landing=true}) => {
                 <ul className="space-y-3 text-sm text-gray-300">
                   <li onClick={() => operate("about")} className="hover:text-white cursor-pointer transition-colors font-poppins">About Us</li>
                   <li onClick={() => operate("home")} className="hover:text-white cursor-pointer transition-colors font-poppins">Home</li>
-                  <li onClick={() => operate("contact")} className="hover:text-white cursor-pointer transition-colors font-poppins">Contact Us</li>
+                  <li onClick={() => setContactFormOpen(!contactFormOpen)} className="hover:text-white cursor-pointer transition-colors font-poppins">Contact Us</li>
                   <li onClick={() => router.push("/become-a-coach")} className="hover:text-white cursor-pointer transition-colors font-poppins">Become a Coach</li>
                 </ul>
               </div>
@@ -187,6 +189,7 @@ const Footer = ({landing=true}) => {
             </div>
           </div>
         </div>
+        <ContactForm isOpen={contactFormOpen} onClose={()=>setContactFormOpen(false)}/>
       </footer>
     </>
   );
