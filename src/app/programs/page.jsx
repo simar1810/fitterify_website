@@ -247,7 +247,8 @@ const Page = () => {
         {programs.map((program, index) => (
           <ProgramCard key={index} program={program} index={index} />
         ))}
-      </div>
+        </div>
+      <p className='text-base md:text-lg font-poppins text-gray-300 text-center font-semibold mt-10'>Still confused about choosing a plan ? Speak to our expert and let us walk you through your wellness journey</p>
     </div>
       <Footer landing={false} />
       </div>

@@ -1,12 +1,17 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Page() {
-  return <section className="w-full min-h-screen bg-[#050504] relative flex justify-center items-center py-16 px-6 md:px-12 ">
+  return (
+    <div>
+    <section className="w-full min-h-screen bg-[#050504] relative flex justify-center items-center py-44 md:py-16 px-6 md:px-12 ">
+        <Navbar landing={false} />
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
         <div className="w-[900px] h-screen bg-[radial-gradient(circle,rgba(255,50,30,0.22),transparent_70%)] blur-3xl"></div>
       </div>
-    <div className="flex flex-col xl:flex-row justify-between items-center h-full text-white gap-8 xl:gap-20">
+    <div className="flex flex-col xl:flex-row justify-between items-center h-full text-white gap-8 xl:gap-10">
       <div className="xl:min-w-1/2 flex flex-col items-center xl:items-start xl:pl-6 md:mt-40 xl:mt-0 text-center xl:text-left">
         <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-4xl font-bold mb-5">Download The <br /> <span className="text-4xl md:text-6xl lg:text-7xl xl:text-6xl">Fitterify App</span></h1>
         <p className="text-sm md:text-xl lg:text-3xl xl:text-xl mb-5 opacity-70 ">Begin your journey Towards Making People Healthy</p>
@@ -29,5 +34,8 @@ export default function Page() {
           className="w-full self-center lg:max-w-4xl xl:w-lg 2xl:max-w-3xl object-contain" />
       </div>
     </div>
-  </section>
+      </section>
+      <Footer landing={false} />
+    </div>
+  )
 }

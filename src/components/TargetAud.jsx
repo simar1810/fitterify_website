@@ -42,7 +42,7 @@ const TargetAud = () => {
           </div>            
           </div>
           <Image
-            src="/bhagte_hue_log.png"
+            src="/jogging2.png"
             width={2000}
             height={2000}
             alt="target audience"
@@ -55,7 +55,7 @@ const TargetAud = () => {
       <div className="max-w-[1300px] mx-auto px-8 grid md:grid-cols-2 gap-8 mt-24">
 
         {/* PROBLEM CARD */}
-        <div className="bg-[#1A1A1A] flex flex-col md:flex-row items-start md:items-center justify-between rounded-2xl py-8 px-4">
+        <div className="bg-[#1A1A1A] flex flex-col md:flex-row items-start md:items-center justify-between rounded-2xl py-8 px-4 shadow-md shadow-[#EE3324]">
           <h3 className="text-white md:text-[#EE3324] font-extrabold text-xl mb-2 uppercase md:mb-6">The Problem</h3>
 
           <ul className="space-y-4 md:pl-6 border-t pt-5 md:pt-0 md:border-l md:border-t-0 border-gray-500 text-white font-medium">
@@ -67,7 +67,7 @@ const TargetAud = () => {
         </div>
 
         {/* SOLUTION CARD */}
-        <div className="bg-[#1A1A1A] flex flex-col md:flex-row items-start md:items-center gap-4 justify-between rounded-2xl py-8 px-4">
+        <div className="bg-[#1A1A1A] flex flex-col md:flex-row items-start md:items-center gap-4 justify-between rounded-2xl py-8 px-4 shadow-md shadow-[#EE3324]">
           <h3 className="text-white md:text-[#EE3324] uppercase font-extrabold text-xl mb-2 md:mb-6">Our <br />Solution</h3>
 
           <ul className="space-y-4 md:pl-6 border-t pt-5 md:pt-0 md:border-l md:border-t-0 border-gray-500 text-white font-medium">
