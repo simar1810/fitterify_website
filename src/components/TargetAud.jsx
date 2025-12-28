@@ -13,9 +13,9 @@ const TargetAud = () => {
             Who This Is For
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-extrabold leading-tight mb-4">
-            <span className="text-white">For Everybody who Wants</span><br />
-            & to<span className="text-[#EE3324]"> live Healthy</span>
+          <h2 className="text-3xl md:text-4xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-extrabold leading-tight mb-4">
+            <span className="text-white">For people who choose <span className="text-[#EE3324]">better</span></span>,<br />
+            daily <span className="text-[#EE3324]">Because</span> feeling well should be your normal.
           </h2>
 
           <p className="font-poppins text-gray-300 w-[80vw] md:max-w-md mb-15 lg:mb-10 xl:mb-15">
@@ -23,7 +23,7 @@ const TargetAud = () => {
             Communities investing in wellness infrastructure.
           </p>
 
-          <div className="grid grid-cols-2 gap-y-4 gap-x-4 md:w-[500px]">
+          <div className="grid grid-cols-2 gap-y-4 gap-x-4 md:w-[500px] lg:w-[450px] xl:w-[500px]">
             <div className="text-[#EE3324] font-semibold text-sm md:text-lg lg:text-sm xl:text-base px-4 py-3 text-center bg-[#131313] rounded-xl">Busy Urban Professionals</div>
             <div className="text-[#EE3324] font-semibold text-sm md:text-lg lg:text-sm xl:text-base px-4 py-3 text-center bg-[#131313] rounded-xl">Consistency Seekers</div>
             <div className="text-[#EE3324] font-semibold text-sm md:text-lg lg:text-sm xl:text-base px-4 py-3 text-center bg-[#131313] rounded-xl">Longevity & Preventive Users</div>
@@ -46,7 +46,7 @@ const TargetAud = () => {
             width={2000}
             height={2000}
             alt="target audience"
-            className="rounded-3xl w-full md:h-[500px] object-cover"
+            className="rounded-3xl w-full md:h-[500px] lg:h-[450px] xl:h-[510px] 2xl:h-[530px] object-cover"
           />
         </div>
       </div>
