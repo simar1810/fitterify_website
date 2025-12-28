@@ -1,13 +1,41 @@
 "use client";
-import React from "react";
+
+import { useEffect, useState } from 'react';
 
 const PrivacyPolicy = () => {
+  const [content, setContent] = useState('');
+
+  useEffect(() => {
+    // Load content from the HTML file in public folder
+    fetch('/privacy-policy-content.html')
+      .then(res => res.text())
+      .then(html => {
+        // Extract content from body if it's a full HTML document, otherwise use as-is
+        const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+        const contentToUse = bodyMatch ? bodyMatch[1] : html;
+        
+        // Remove <html>, <head>, and <style> tags if present
+        let cleanContent = contentToUse
+          .replace(/<html[^>]*>[\s\S]*?<body[^>]*>/i, '')
+          .replace(/<\/body>[\s\S]*?<\/html>/i, '')
+          .replace(/<head[^>]*>[\s\S]*?<\/head>/i, '')
+          .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+        
+        setContent(cleanContent);
+      })
+      .catch(err => {
+        console.error('Error loading privacy content:', err);
+        setContent('<p>Content is being loaded...</p>');
+      });
+  }, []);
+
   return (
-    <section className="bg-[#FAFAFA] min-h-screen py-12 px-6 sm:px-10 lg:px-20 xl:px-32 overflow-hidden">
-      <div className="max-w-5xl mx-auto bg-white shadow-md rounded-2xl p-6 sm:p-10 lg:p-12 relative z-10 border border-gray-100">
+    <section className="bg-[#FAFAFA] min-h-screen py-12 px-6 sm:px-10 lg:px-20 xl:px-32">
+      <div className="max-w-5xl mx-auto bg-white shadow-md rounded-2xl p-6 sm:p-10 lg:p-12 border border-gray-100">
+
         {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="w-full md:w-xs pb-1 mx-auto text-3xl sm:text-4xl font-bold text-[#3D3D3D] mb-3 border-b-4 border-[#07363C]">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold text-[#3D3D3D] mb-3 border-b-4 border-[#07363C] inline-block pb-1">
             Privacy Policy
           </h1>
           <p className="text-[#494848] text-sm sm:text-base">
@@ -15,304 +43,121 @@ const PrivacyPolicy = () => {
           </p>
         </div>
 
-        {/* Body */}
-        <div className="space-y-8 text-[#494848] leading-relaxed text-sm sm:text-base">
-          <p>
-            This Privacy Policy describes Our policies and procedures on the
-            collection, use and disclosure of Your information when You use the
-            Service and tells You about Your privacy rights and how the law
-            protects You.
-          </p>
-          <p>
-            We use Your Personal data to provide and improve the Service. By
-            using the Service, You agree to the collection and use of
-            information in accordance with this Privacy Policy.
-          </p>
-
-          {/* Interpretation and Definitions */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Interpretation and Definitions
-          </h2>
-
-          <h3 className="font-semibold text-[#3D3D3D] mt-4">Interpretation</h3>
-          <p>
-            The words of which the initial letter is capitalized have meanings
-            defined under the following conditions. The following definitions
-            shall have the same meaning regardless of whether they appear in
-            singular or plural.
-          </p>
-
-          <h3 className="font-semibold text-[#3D3D3D] mt-4">Definitions</h3>
-          <p>For the purposes of this Privacy Policy:</p>
-          <ul className="list-disc list-inside space-y-2">
-            <li>
-              <strong>Account</strong> means a unique account created for You to
-              access our Service or parts of our Service.
-            </li>
-            <li>
-              <strong>Affiliate</strong> means an entity that controls, is
-              controlled by or is under common control with a party, where
-              “control” means ownership of 50% or more of the shares, equity
-              interest or other securities entitled to vote for election of
-              directors or other managing authority.
-            </li>
-            <li>
-              <strong>Company</strong> (referred to as either &quot;the Company&quot;,
-              &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Fitterify.
-            </li>
-            <li>
-              <strong>Cookies</strong> are small files placed on Your computer,
-              mobile device or any other device by a website, containing details
-              of Your browsing history among its many uses.
-            </li>
-            <li>
-              <strong>Country</strong> refers to: Punjab, India.
-            </li>
-            <li>
-              <strong>Device</strong> means any device that can access the
-              Service such as a computer, cellphone or a digital tablet.
-            </li>
-            <li>
-              <strong>Personal Data</strong> is any information that relates to
-              an identified or identifiable individual.
-            </li>
-            <li>
-              <strong>Service</strong> refers to the Website.
-            </li>
-            <li>
-              <strong>Service Provider</strong> means any natural or legal
-              person who processes the data on behalf of the Company.
-            </li>
-            <li>
-              <strong>Usage Data</strong> refers to data collected automatically,
-              either generated by the use of the Service or from the Service
-              infrastructure itself (for example, duration of a page visit).
-            </li>
-            <li>
-              <strong>Website</strong> refers to Fitterify, accessible from{" "}
-              <a
-                href="https://fitterify-website.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#07363C] hover:underline"
-              >
-                fitterify-website.vercel.app
-              </a>
-            </li>
-            <li>
-              <strong>You</strong> means the individual accessing or using the
-              Service, or the company or other legal entity on whose behalf such
-              individual is accessing or using the Service, as applicable.
-            </li>
-          </ul>
-
-          {/* Collecting and Using Personal Data */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Collecting and Using Your Personal Data
-          </h2>
-
-          <h3 className="font-semibold text-[#3D3D3D] mt-4">
-            Types of Data Collected
-          </h3>
-          <h4 className="font-semibold text-[#3D3D3D] mt-2">Personal Data</h4>
-          <p>
-            While using Our Service, We may ask You to provide Us with certain
-            personally identifiable information that can be used to contact or
-            identify You. Personally identifiable information may include, but
-            is not limited to:
-          </p>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Email address</li>
-            <li>First name and last name</li>
-            <li>Phone number</li>
-            <li>Usage Data</li>
-          </ul>
-
-          <h4 className="font-semibold text-[#3D3D3D] mt-2">Usage Data</h4>
-          <p>
-            Usage Data is collected automatically when using the Service. It may
-            include IP address, browser type, version, pages visited, and other
-            diagnostic data.
-          </p>
-
-          <h4 className="font-semibold text-[#3D3D3D] mt-2">
-            Tracking Technologies and Cookies
-          </h4>
-          <p>
-            We use Cookies and similar tracking technologies to track activity
-            and store information. These technologies include cookies, beacons,
-            tags, and scripts for analytics and improvement.
-          </p>
-          <ul className="list-disc list-inside space-y-2">
-            <li>
-              <strong>Cookies or Browser Cookies:</strong> A cookie is a small
-              file placed on Your device. You can refuse Cookies in browser
-              settings, but some parts of our Service may not work properly.
-            </li>
-            <li>
-              <strong>Web Beacons:</strong> These are small electronic files
-              used to count users or verify system integrity.
-            </li>
-          </ul>
-          <p>
-            Learn more about cookies on the{" "}
-            <a
-              href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#009048] hover:underline"
-            >
-              Free Privacy Policy website
-            </a>
-            .
-          </p>
-
-          {/* Use of Personal Data */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Use of Your Personal Data
-          </h2>
-          <p>The Company may use Personal Data for the following purposes:</p>
-          <ul className="list-disc list-inside space-y-2">
-            <li>To provide and maintain our Service.</li>
-            <li>
-              To manage Your Account and registration as a user of the Service.
-            </li>
-            <li>
-              To contact You by email, phone, SMS, or other equivalent forms of
-              communication.
-            </li>
-            <li>
-              To provide You with news, offers, and information about services
-              similar to those You already use.
-            </li>
-            <li>To manage Your requests to Us.</li>
-          </ul>
-
-          <p>
-            The Company may share Your personal information in the following
-            situations:
-          </p>
-          <ul className="list-disc list-inside space-y-2">
-            <li>With Service Providers for monitoring and analysis.</li>
-            <li>
-              For business transfers such as mergers, sales, or acquisitions.
-            </li>
-            <li>With affiliates or partners under confidentiality terms.</li>
-            <li>With Your consent for specific purposes.</li>
-          </ul>
-
-          {/* Retention */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Retention of Your Personal Data
-          </h2>
-          <p>
-            The Company will retain Your Personal Data only for as long as
-            necessary for the purposes set out in this Privacy Policy. Usage
-            Data is retained for internal analysis to improve services and
-            security.
-          </p>
-
-          {/* Transfer */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Transfer of Your Personal Data
-          </h2>
-          <p>
-            Your information, including Personal Data, may be transferred to —
-            and maintained on — computers located outside of Your jurisdiction
-            where data protection laws may differ. By submitting information,
-            You agree to such transfer.
-          </p>
-
-          {/* Delete */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Delete Your Personal Data
-          </h2>
-          <p>
-            You have the right to delete or request assistance in deleting
-            Personal Data collected about You. You may delete Your information
-            by contacting Us.
-          </p>
-
-          {/* Disclosure */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Disclosure of Your Personal Data
-          </h2>
-          <h3 className="font-semibold text-[#3D3D3D] mt-4">
-            Business Transactions
-          </h3>
-          <p>
-            If the Company is involved in a merger or acquisition, Your Personal
-            Data may be transferred. Notice will be given before any such
-            transfer.
-          </p>
-
-          <h3 className="font-semibold text-[#3D3D3D] mt-4">
-            Law Enforcement
-          </h3>
-          <p>
-            The Company may disclose Your Personal Data where required by law or
-            public authorities.
-          </p>
-
-          {/* Security */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Security of Your Personal Data
-          </h2>
-          <p>
-            The security of Your Personal Data is important to Us, but remember
-            that no transmission method is 100% secure. We strive to use
-            commercially acceptable means to protect Your data.
-          </p>
-
-          {/* Children */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Children&quot;s Privacy
-          </h2>
-          <p>
-            Our Service does not address anyone under the age of 13. We do not
-            knowingly collect personally identifiable information from minors.
-          </p>
-
-          {/* Links */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Links to Other Websites
-          </h2>
-          <p>
-            Our Service may contain links to other websites not operated by Us.
-            We advise You to review the Privacy Policy of every site You visit.
-          </p>
-
-          {/* Changes */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Changes to this Privacy Policy
-          </h2>
-          <p>
-            We may update Our Privacy Policy from time to time. Updates will be
-            posted on this page, and the &quot;Last updated&quot; date will be revised.
-          </p>
-
-          {/* Contact */}
-          <h2 className="text-xl font-semibold text-[#3D3D3D] border-l-4 border-[#07363C] pl-3">
-            Contact Us
-          </h2>
-          <p>
-            If you have any questions about this Privacy Policy, You can contact
-            us at{" "}
-            <a
-              href="mailto:nutrihealthbridge@gmail.com"
-              className="text-[#009048] hover:underline"
-            >
-              fitterify@gmail.com
-            </a>
-            .
-          </p>
-
-          {/* Footer note */}
-          <p className="mt-8 text-xs sm:text-sm text-gray-500 italic border-t border-gray-200 pt-6">
-            This Privacy Policy was last updated on <strong>December 15, 2025</strong>.
-          </p>
-        </div>
+        {/* Content Area - Your pasted content will appear here */}
+        <div 
+          className="content-area"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
       </div>
+
+      <style jsx>{`
+        .content-area {
+          font-size: 15px;
+          line-height: 1.8;
+          color: #1a1a1a !important;
+          word-wrap: break-word;
+        }
+        .content-area span:not(h1 span):not(h2 span):not(h3 span):not(h4 span):not(h5 span):not(h6 span) {
+          color: #1a1a1a !important;
+        }
+        .content-area div {
+          color: #1a1a1a !important;
+        }
+        .content-area h1,
+        .content-area h2,
+        .content-area h3,
+        .content-area h4,
+        .content-area h5,
+        .content-area h6 {
+          color: #3D3D3D !important;
+          font-weight: 600;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          line-height: 1.4;
+        }
+        .content-area h1 {
+          font-size: 2rem;
+          border-bottom: 3px solid #07363C;
+          padding-bottom: 0.5rem;
+          margin-top: 0;
+        }
+        .content-area h2 {
+          font-size: 1.5rem;
+          margin-top: 2.5rem;
+        }
+        .content-area h3 {
+          font-size: 1.25rem;
+          margin-top: 2rem;
+        }
+        .content-area h4 {
+          font-size: 1.1rem;
+          margin-top: 1.5rem;
+        }
+        .content-area p {
+          margin-bottom: 1.25rem;
+          line-height: 1.8;
+          color: #1a1a1a !important;
+        }
+        .content-area p[style] {
+          color: #1a1a1a !important;
+        }
+        .content-area p span {
+          color: #1a1a1a !important;
+        }
+        .content-area [style*="color"] {
+          color: #1a1a1a !important;
+        }
+        .content-area [style*="color"]:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+          color: #1a1a1a !important;
+        }
+        .content-area ul,
+        .content-area ol {
+          margin: 1rem 0;
+          padding-left: 2rem;
+        }
+        .content-area li {
+          margin-bottom: 0.5rem;
+          line-height: 1.8;
+          color: #1a1a1a !important;
+        }
+        .content-area strong,
+        .content-area b {
+          font-weight: 600;
+          color: #3D3D3D;
+        }
+        .content-area em,
+        .content-area i {
+          font-style: italic;
+        }
+        .content-area a {
+          color: #07363C;
+          text-decoration: underline;
+        }
+        .content-area a:hover {
+          color: #055A61;
+        }
+        .content-area table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1.5rem 0;
+          font-size: 14px;
+        }
+        .content-area table td,
+        .content-area table th {
+          padding: 0.75rem;
+          border: 1px solid #ddd;
+        }
+        .content-area table th {
+          background-color: #f5f5f5;
+          font-weight: 600;
+        }
+        .content-area blockquote {
+          border-left: 4px solid #07363C;
+          padding-left: 1rem;
+          margin: 1rem 0;
+          font-style: italic;
+        }
+      `}</style>
     </section>
   );
 };
