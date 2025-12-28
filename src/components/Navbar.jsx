@@ -85,7 +85,7 @@ export default function Navbar({landing=true}) {
           <span className={tabClasses("contact")} onClick={() => router.push("/programs")}>
             Programs
           </span>
-          <span className={tabClasses("contact")} onClick={() => operate("contact")}>
+          <span className={tabClasses("contact")} onClick={() => router.push("/corporate-wellness")}>
             Corporate Wellness
           </span>
           <span className={tabClasses("contact")} onClick={() => setContactFormOpen(!contactFormOpen)}>
@@ -158,7 +158,7 @@ export default function Navbar({landing=true}) {
               </span>
               <span
                 className={tabClasses("contact")}
-                onClick={() => operate("contact")}
+                onClick={() => router.push("/corporate-wellness")}
               >
                 Corporate Wellness
               </span>

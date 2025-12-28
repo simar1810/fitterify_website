@@ -96,6 +96,7 @@ const Footer = ({ landing = true }) => {
                   <li onClick={() => operate("home")} className="hover:text-white cursor-pointer transition-colors font-poppins">Home</li>
                   <li onClick={() => setContactFormOpen(!contactFormOpen)} className="hover:text-white cursor-pointer transition-colors font-poppins">Contact Us</li>
                   <li onClick={() => router.push("/become-a-coach")} className="hover:text-white cursor-pointer transition-colors font-poppins">Become a Coach</li>
+                  <li onClick={() => router.push("/faq")} className="hover:text-white cursor-pointer transition-colors font-poppins">FAQ</li>
                 </ul>
               </div>
               
@@ -104,7 +105,7 @@ const Footer = ({ landing = true }) => {
                 <ul className="space-y-3 text-sm text-gray-300">
                   <li className="hover:text-white cursor-pointer transition-colors font-poppins">Coaching</li>
                   <li onClick={()=> router.push("/programs")} className="font-poppins hover:text-white cursor-pointer transition-colors">Programs</li>
-                  <li className="hover:text-white cursor-pointer transition-colors font-poppins">Corporate Wellness</li>
+                  <li onClick={()=> router.push("/corporate-wellness")} className="hover:text-white cursor-pointer transition-colors font-poppins">Corporate Wellness</li>
                 </ul>
               </div>
               
@@ -186,6 +187,11 @@ const Footer = ({ landing = true }) => {
                    </div> 
                 </div>
               </div>
+            </div>
+            <div className="w-full flex items-center justify-center mt-4 md:justify-end gap-1.5">
+              <p onClick={()=>router.push("/privacy-policy")} className="text-xs hover:underline hover:font-semibold transition-all cursor-pointer">Privacy Policy</p>
+              <div className="bg-gray-300 p-0.5 rounded-full mt-1"></div>
+              <p onClick={()=>router.push("/terms-and-conditions")} className="text-xs hover:font-semibold hover:underline transition-all cursor-pointer">Terms & Conditions</p>
             </div>
           </div>
         </div>
