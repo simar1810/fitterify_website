@@ -2,37 +2,175 @@
 import ContactForm from '@/components/ContactUs';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import { fetchData } from '@/lib/api';
+import { fetchData, sendData } from '@/lib/api';
 import { getRazorpyaOptions, loadRazorpayScript } from '@/lib/razorpay';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import { X } from 'lucide-react';
+
+const SubscriptionModal = ({ isOpen, onClose, onSubmit, planName, loading }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobileNumber: ''
+  });
+  const [errors, setErrors] = useState({});
+
+  if (!isOpen) return null;
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Invalid email format';
+    }
+
+    const mobileRegex = /^[6-9]\d{9}$/;
+    if (!formData.mobileNumber.trim()) {
+      newErrors.mobileNumber = 'Mobile number is required';
+    } else if (!mobileRegex.test(formData.mobileNumber)) {
+      newErrors.mobileNumber = 'Invalid Indian mobile number (10 digits)';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      onSubmit(formData);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div className="bg-[#1a1a1a] border border-white/10 w-full max-w-md rounded-2xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+        <div className="relative p-6">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          >
+            <X size={24} />
+          </button>
+
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-white mb-2">Subscribe to {planName}</h2>
+            <p className="text-gray-400 text-sm">Please provide your details to proceed with the payment.</p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1.5">Full Name</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="John Doe"
+                className={`w-full bg-white/5 border ${errors.name ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#EE3324]/50 transition-all`}
+              />
+              {errors.name && <p className="text-red-500 text-xs mt-1.5 ml-1">{errors.name}</p>}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1.5">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="john@example.com"
+                className={`w-full bg-white/5 border ${errors.email ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#EE3324]/50 transition-all`}
+              />
+              {errors.email && <p className="text-red-500 text-xs mt-1.5 ml-1">{errors.email}</p>}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1.5">Mobile Number</label>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">+91</span>
+                <input
+                  type="tel"
+                  name="mobileNumber"
+                  value={formData.mobileNumber}
+                  onChange={handleChange}
+                  placeholder="9876543210"
+                  maxLength={10}
+                  className={`w-full bg-white/5 border ${errors.mobileNumber ? 'border-red-500' : 'border-white/10'} rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#EE3324]/50 transition-all`}
+                />
+              </div>
+              {errors.mobileNumber && <p className="text-red-500 text-xs mt-1.5 ml-1">{errors.mobileNumber}</p>}
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-[#EE3324] hover:bg-[#d62d20] disabled:opacity-50 text-white font-bold py-4 rounded-xl mt-4 transition-all active:scale-[0.98]"
+            >
+              {loading ? "Processing..." : "Proceed to Pay"}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const ProgramCard = ({ program }) => {
   const [payLoading, setPayLoading] = useState()
   const [error, setError] = useState()
+  const [modalOpen, setModalOpen] = useState(false);
 
   const programName = program.name?.toLowerCase()
 
-  async function handlePay() {
+  async function handlePay(userDetails) {
     setPayLoading(true);
     setError("");
     try {
       const loaded = await loadRazorpayScript();
-      console.log("CONDITION HIT", loaded)
       if (!loaded) {
-        setError("Failed to load Razorpay script.");
+        toast.error("Failed to load Razorpay script.");
         setPayLoading(false);
         return;
       }
+
       // Create Razorpay order using backend API
-      const res = await fetchData(`razorpay/fitterify-order?program=${programName}`);
+      const res = await sendData(`app/fitterfly/create-subscription`, {
+        ...userDetails,
+        planId: programName
+      });
+
       if (res?.status_code !== 200) {
-        setError(res?.message || "Could not create Razorpay order.");
+        toast.error(res?.message || "Could not create Razorpay order.");
         setPayLoading(false);
         return;
       }
+
       const options = getRazorpyaOptions(res.data)
+
+      // Update prefill with user details
+      options.prefill = {
+        name: userDetails.name,
+        email: userDetails.email,
+        contact: `+91${userDetails.mobileNumber}`
+      };
+
       const rzp = new window.Razorpay(options);
       rzp.open();
+      setModalOpen(false);
     } catch (err) {
       console.error(err)
       toast.error(err.message || "Something went wrong")
@@ -72,14 +210,22 @@ const ProgramCard = ({ program }) => {
           ))}
         </div>
 
-        <button 
-          onClick={handlePay}
+        <button
+          onClick={() => setModalOpen(true)}
           disabled={payLoading}
           className="w-full bg-[#EE3324] hover:bg-red-700 text-white font-semibold py-4 rounded-full transition-colors disabled:opacity-50"
         >
-          {payLoading ? "Processing..." : "Buy Now"}
+          Buy Now
         </button>
       </div>
+
+      <SubscriptionModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        onSubmit={handlePay}
+        planName={program.name}
+        loading={payLoading}
+      />
     </div>
   );
 };
@@ -228,36 +374,36 @@ const Page = () => {
   const [contactFormOpen, setContactFormOpen] = useState(false);
 
   return (
-      <div id='program' className="bg-[#050504] min-h-screen">
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-         <div className="w-[900px] h-[1000px] bg-[radial-gradient(circle,rgba(255,50,30,0.22),transparent_70%)] blur-3xl"></div>
-       </div>
-        <Navbar landing={false} />
+    <div id='program' className="bg-[#050504] min-h-screen">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+        <div className="w-[900px] h-[1000px] bg-[radial-gradient(circle,rgba(255,50,30,0.22),transparent_70%)] blur-3xl"></div>
+      </div>
+      <Navbar landing={false} />
 
-    <div className="min-h-screen pt-44 pb-16 px-4">
-      <div className="text-center mb-16 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-extrabold uppercase text-white mb-4">
-          Pricing Plans
+      <div className="min-h-screen pt-44 pb-16 px-4">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-extrabold uppercase text-white mb-4">
+            Pricing Plans
           </h1>
           <div className='w-60 border-2 mb-2 border-[#EE3324] text-center mx-auto'></div>
-        <p className="font-poppins text-[#EDEDED] text-base md:text-lg max-w-3xl mx-auto">
-          Pick a plan, commit to your journey, and let the transformation begin.
-        </p>
-      </div>
+          <p className="font-poppins text-[#EDEDED] text-base md:text-lg max-w-3xl mx-auto">
+            Pick a plan, commit to your journey, and let the transformation begin.
+          </p>
+        </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {programs.map((program, index) => (
-          <ProgramCard key={index} program={program} index={index} />
-        ))}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {programs.map((program, index) => (
+            <ProgramCard key={index} program={program} index={index} />
+          ))}
         </div>
         <p className='text-base md:text-lg font-poppins text-gray-300 text-center font-semibold mt-10'>Still confused about choosing a plan ? Speak to our expert and let us walk you through your wellness journey</p>
-      <div className='w-full flex items-center justify-center mt-4'>
-        <button onClick={()=>setContactFormOpen(true)} className='cursor-pointer px-4 py-2 ring-1 ring-[#EE3324] bg-[#1a1a1a] rounded-2xl  text-[#EE3324] font-semibold'>Contact Us</button>
+        <div className='w-full flex items-center justify-center mt-4'>
+          <button onClick={() => setContactFormOpen(true)} className='cursor-pointer px-4 py-2 ring-1 ring-[#EE3324] bg-[#1a1a1a] rounded-2xl  text-[#EE3324] font-semibold'>Contact Us</button>
+        </div>
       </div>
-      </div>
-      <ContactForm isOpen={contactFormOpen} onClose={()=>setContactFormOpen(false)}/>
+      <ContactForm isOpen={contactFormOpen} onClose={() => setContactFormOpen(false)} />
       <Footer landing={false} />
-      </div>
+    </div>
   );
 };
 
