@@ -6,7 +6,38 @@ import { fetchData, sendData } from '@/lib/api';
 import { getRazorpyaOptions, loadRazorpayScript } from '@/lib/razorpay';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import { X } from 'lucide-react';
+import { X, CheckCircle2 } from 'lucide-react';
+
+const ThankYouModal = ({ isOpen, onClose, planName }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+      <div className="bg-[#1a1a1a] border border-white/10 w-full max-w-md rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-500">
+        <div className="p-10 text-center">
+          <div className="flex justify-center mb-6">
+            <div className="bg-green-500/20 p-4 rounded-full">
+              <CheckCircle2 size={48} className="text-green-500" />
+            </div>
+          </div>
+
+          <h2 className="text-3xl font-bold text-white mb-4">Payment Successful!</h2>
+          <p className="text-gray-400 text-lg mb-8">
+            Thank you for subscribing to <span className="text-white font-semibold">{planName}</span>.
+            Welcome to the Fitterify journey!
+          </p>
+
+          <button
+            onClick={onClose}
+            className="w-full bg-white text-black hover:bg-gray-200 font-bold py-4 rounded-xl transition-all active:scale-[0.98]"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const SubscriptionModal = ({ isOpen, onClose, onSubmit, planName, loading }) => {
   const [formData, setFormData] = useState({
@@ -133,6 +164,7 @@ const ProgramCard = ({ program }) => {
   const [payLoading, setPayLoading] = useState()
   const [error, setError] = useState()
   const [modalOpen, setModalOpen] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const programName = program.name?.toLowerCase()
 
@@ -168,9 +200,15 @@ const ProgramCard = ({ program }) => {
         contact: `+91${userDetails.mobileNumber}`
       };
 
+      // Add success handler
+      options.handler = function (response) {
+        console.log("Payment Success:", response);
+        setModalOpen(false);
+        setShowThankYou(true);
+      };
+
       const rzp = new window.Razorpay(options);
       rzp.open();
-      setModalOpen(false);
     } catch (err) {
       console.error(err)
       toast.error(err.message || "Something went wrong")
@@ -225,6 +263,12 @@ const ProgramCard = ({ program }) => {
         onSubmit={handlePay}
         planName={program.name}
         loading={payLoading}
+      />
+
+      <ThankYouModal
+        isOpen={showThankYou}
+        onClose={() => setShowThankYou(false)}
+        planName={program.name}
       />
     </div>
   );
