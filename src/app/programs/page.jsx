@@ -343,7 +343,7 @@ const Page = () => {
         {
           icon: PlanIcon,
           title: "TOOLS",
-          description: "1x Personalised Health Blueprint\nAccess to Resolute™ app (For 3 Months)\n1x Trainer Signals"
+          description: "1x Personalised Health Blueprint\nAccess to Fitterify™ app (For 3 Months)\n1x Trainer Signals"
         },
         {
           icon: TargetIcon,
@@ -366,7 +366,7 @@ const Page = () => {
         {
           icon: SearchIcon,
           title: "DEEP ANALYSIS",
-          description: "we find what’s slowing you down: low energy, bloating, slow metabolism, etc"
+          description: "We find what’s slowing you down: low energy, bloating, slow metabolism, etc"
         },
         {
           icon: PlanIcon,
