@@ -16,7 +16,7 @@ export function getRazorpyaOptions(res) {
     key: process.env.NEXT_PUBLIC_RAZORPAY_CLIENT_ID,
     amount: res.amount,
     currency: "INR",
-    name: "WellnessZ",
+    name: "Fitterify",
     description: "Payment",
     order_id: res.orderId,
     handler: function () { },
