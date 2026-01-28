@@ -333,7 +333,7 @@ const Page = () => {
       name: "IGNITE",
       description: "No matter how hard you train, your biology sets the ceiling. With optiME Club, we turn guesswork into precision.",
       tagline: "All-in-one system to help you improve strength, stamina, recovery, and resilience—through Data, Science & Expert Guidance",
-      price: 8999,
+      price: 9999,
       features: [
         {
           icon: DiagnosticsIcon,
