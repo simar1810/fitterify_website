@@ -17,16 +17,16 @@ export function middleware(request) {
   const userAgent = request.headers.get('user-agent') || '';
 
   if (IOS_REGEX.test(userAgent)) {
-    return NextResponse.redirect(new URL(APP_STORE_URL), 302);
+    return NextResponse.redirect(APP_STORE_URL, { status: 302 });
   }
 
   if (ANDROID_REGEX.test(userAgent)) {
-    return NextResponse.redirect(new URL(PLAY_STORE_URL), 302);
+    return NextResponse.redirect(PLAY_STORE_URL, { status: 302 });
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/app', '/app/:path*'],
+  matcher: ['/app/:path*'],
 };
