@@ -1,32 +1,41 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Page() {
-  return <section className="w-full min-h-screen bg-[url('/app_bg.png')] bg-center flex justify-center items-center py-[4rem] px-6 md:px-12 ">
-    <div className="flex flex-col lg:flex-row justify-between items-center h-full text-white gap-[2rem] lg:gap-[5rem]">
-      <div className="lg:min-w-1/2 flex flex-col items-center lg:items-start lg:pl-6 md:mt-[10rem] lg:mt-0 text-center lg:text-left">
-        <h1 className="text-[1.2rem] md:text-[1.5rem] lg:text-[3rem] font-bold lg:mb-12 lg:leading-[3.5rem] ">Download the <br />
-          <span className='md:text-[2.7rem] text-[2rem] lg:text-[3rem] text-white opacity-100'>The Zen Fit App</span>
-        </h1>
-        <p className="text-sm md:text-xl mb-5 opacity-70 ">Begin your journey Towards Making People Healthy</p>
+  return (
+    <div>
+    <section className="w-full min-h-screen bg-[#050504] relative flex justify-center items-center py-44 md:py-16 px-6 md:px-12 ">
+        <Navbar landing={false} />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+        <div className="w-[900px] h-screen bg-[radial-gradient(circle,rgba(255,50,30,0.22),transparent_70%)] blur-3xl"></div>
+      </div>
+    <div className="flex flex-col xl:flex-row justify-between items-center h-full text-white gap-8 xl:gap-10">
+      <div className="xl:min-w-1/2 flex flex-col items-center xl:items-start xl:pl-6 md:mt-40 xl:mt-0 text-center xl:text-left">
+        <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-4xl font-bold mb-5">Download The <br /> <span className="text-4xl md:text-6xl lg:text-7xl xl:text-6xl">Fitterify App</span></h1>
+        <p className="text-sm md:text-xl lg:text-3xl xl:text-xl mb-5 opacity-70 ">Begin your journey Towards Making People Healthy</p>
         <div className="flex justify-between items-center gap-5 mb-5">
-          <Link href="https://play.google.com/store/apps/details?id=com.wellnessz.zenfit&hl=en-us" target="_blank">
-            <Image src="/playstore.png" alt="Google Store" width={150} height={40} className="cursor-pointer" />
+          <Link href="https://play.google.com/store/apps/details?id=com.wellnessz.fitterifyapp" target="_blank">
+            <Image src="/playstore.png" alt="Google Store" width={500} height={400} className="cursor-pointer w-30 md:w-[10vw]" />
           </Link>
-          <Link href="https://apps.apple.com/us/app/zenfit-app/id6743387199" target="_blank">
-            <Image src="/appStore.png" alt="App Store" width={150} height={60} className="cursor-pointer" />
+          <Link href="https://apps.apple.com/us/app/fitterify/id6756501595" target="_blank">
+            <Image src="/appStore.png" alt="App Store" width={500} height={400} className="cursor-pointer w-30 md:w-[10vw]" />
           </Link>
         </div>
       </div>
 
       <div className="flex justify-center items-center mr-2 md:mr-12">
         <Image
-          src="/swc_app_mockup.png"
-          alt="SWC App Screens"
+          src="/mockup.png"
+          alt="fitterify-app"
           width={900}
           height={900}
-          className="w-full self-center max-w-3xl object-contain" />
+          className="w-full self-center lg:max-w-4xl xl:w-lg 2xl:max-w-3xl object-contain" />
       </div>
     </div>
-  </section>
+      </section>
+      <Footer landing={false} />
+    </div>
+  )
 }

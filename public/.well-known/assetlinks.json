@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.wellnessz.aaharsutra",
+      "sha256_cert_fingerprints": [
+        "52:42:B2:7E:21:24:11:20:03:73:29:1C:37:F1:1B:6C:DB:39:C9:A2:DC:66:32:8E:6A:33:59:38:E5:21:B7:64"
+      ]
+    }
+  }
+]
